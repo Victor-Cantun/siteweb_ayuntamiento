@@ -13,6 +13,3 @@ document.querySelector("#btn_gaceta").addEventListener("click", () => {
 document.querySelector("#btn_ayuntamiento").addEventListener("click", () => {
   document.querySelector("#menu_ayuntamiento").classList.toggle("hidden");
 });
-document.querySelector("#btn_dependencias").addEventListener("click", () => {
-  document.querySelector("#menu_dependencias").classList.toggle("hidden");
-});

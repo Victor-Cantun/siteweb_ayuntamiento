@@ -10,8 +10,14 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/react": "^3.6.1",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vis.gl/react-google-maps": "^1.1.0",
     "astro": "^4.12.2",
-    "flowbite": "^2.4.1"
+    "flowbite": "^2.4.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.19",
