@@ -13,9 +13,11 @@ const title = 'H. Ayuntamiento de Escárcega';
 <Layout title={title} >
 	<main class="bg-slate-200">
 		<Carousel></Carousel>
-		<section class="flex flex-wrap items-center space-x-1 w-4/5 mx-auto">
-		<CardMesaAtencion></CardMesaAtencion>
-		<CardApp></CardApp>
+		<section class="bg-fixed bg-cover bg-no-repeat bg-center" style="background-image: url(/jaguar.png)">
+			<article class="flex flex-wrap items-center space-x-1 w-4/5 mx-auto bg-[#ffffff80] px-2">
+				<CardMesaAtencion></CardMesaAtencion>
+				<CardApp></CardApp>
+			</article>
 		</section>
 		<Dependencias></Dependencias>
 	</main>
