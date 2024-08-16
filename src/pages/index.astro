@@ -3,6 +3,7 @@ import '../input.css'
 import '../output.css'
 import Layout from '../layouts/Layout.astro';
 import Aside from '../components/Aside.astro';
+import Cabildo from '../components/Cabildo.astro';
 import Carousel from '../components/Carousel.astro';
 import Dependencias from '../components/Dependencias.astro';
 import CardMesaAtencion from '../components/CardMesaAtencion.astro'
@@ -12,6 +13,7 @@ const title = 'H. Ayuntamiento de Escárcega';
 
 <Layout title={title} >
 	<main class="bg-slate-200">
+		<Cabildo></Cabildo>
 		<Carousel></Carousel>
 		<section class="bg-fixed bg-cover bg-no-repeat bg-center" style="background-image: url(/jaguar.png)">
 			<article class="flex flex-wrap items-center space-x-1 w-4/5 mx-auto bg-[#ffffff80] px-2">

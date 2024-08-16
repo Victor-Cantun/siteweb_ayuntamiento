@@ -81,9 +81,9 @@ const dependences=[
             <div class="flex justify-center items-center">
                 <p class="text-xl font-bold tracking-tight text-cherry py-3">DEPENDENCIAS</p>
             </div>
-            <div class="mx-auto grid max-w-7xl gap-x-8 gap-y-10 px-6 lg:px-8 xl:grid-cols-3">
+            <div class="mx-auto grid max-w-7xl gap-x-8 gap-y-10 px-6 lg:px-8 lg:grid-cols-2 xl:grid-cols-3 ">
                 {dependences.map((_item)=>
-                <div class="grid relative overflow-hidden before:absolute before:bg-cherry before:w-[5px] before:h-[400px] before:z-0 before:transition-all hover:before:w-full hover:before:h-full after:absolute after:inset-[5px] after:z-0 after:bg-white">
+                <div class="grid relative shadow rounded overflow-hidden before:absolute before:bg-cherry before:w-[5px] before:h-[400px] before:z-0 before:transition-all hover:before:w-full hover:before:h-full after:absolute after:inset-[5px] after:z-0 after:bg-white">
                     <div class="flex items-center gap-x-6 px-3 py-2 z-10">
                         <img class="h-16 w-16 rounded-full " src={_item.photo} alt="">
                         <div>
