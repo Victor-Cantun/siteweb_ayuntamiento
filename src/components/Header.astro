@@ -1,15 +1,16 @@
 ---
+const title = 'H. Ayuntamiento de Escárcega';
 ---
-<header class="bg-cherry border-b-8 border-golden">
+<header class="bg-white border-b-8 border-golden w-full fixed z-50" id="header">
     <nav class="mx-auto flex max-w-7xl items-center justify-between p-2 lg:px-8" aria-label="Global">
         <div class="flex lg:flex-1">
         <a href="#" class="-m-1 p-1">
-            <span class="sr-only">Your Company</span>
+            <span class="sr-only">{title}</span>
             <img class="h-[95px] w-[250px]" src="/logo-2.png" alt="">
         </a>
         </div>
         <div class="flex">
-            <button id="open_menu" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white lg:hidden">
+            <button id="open_menu" type="button" class="text_menu -m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-black lg:hidden">
                 <span class="sr-only">Abrir menu</span>
                 <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -17,18 +18,18 @@
             </button>
         </div>
         <div class="hidden lg:flex lg:gap-x-12">
-            <a href="#" class="text-sm font-semibold leading-6 text-white">Inicio</a>
+            <a href="#" class="text_menu text-sm font-semibold leading-6 text-black">Inicio</a>
             <div class="relative">
-                <button id="btn_ayuntamiento" type="button" class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-white " aria-expanded="false">
+                <button id="btn_ayuntamiento" type="button" class="text_menu flex items-center gap-x-1 text-sm font-semibold leading-6 text-black " aria-expanded="false">
                     Ayuntamiento
                     <svg class="h-5 w-5 flex-none text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                         <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
                     </svg>
                 </button>
             </div>
-            <a href="#Dependencias" class="text-sm font-semibold leading-6 text-white">Dependencias</a>
+            <a href="#Dependencias" class="text_menu text-sm font-semibold leading-6 text-black">Dependencias</a>
             <div class="relative">
-                <button id="btn_gaceta" type="button" class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-white" aria-expanded="false">
+                <button id="btn_gaceta" type="button" class="text_menu flex items-center gap-x-1 text-sm font-semibold leading-6 text-black" aria-expanded="false">
                     Gaceta
                     <svg class="h-5 w-5 flex-none text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                         <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
@@ -69,7 +70,7 @@
                 </div>
             </div>
             <div class="relative">
-                <button id="btn_transparencia" type="button" class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-white" aria-expanded="false">
+                <button id="btn_transparencia" type="button" class="text_menu flex items-center gap-x-1 text-sm font-semibold leading-6 text-black" aria-expanded="false">
                     Transparencia
                     <svg class="h-5 w-5 flex-none text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                         <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
@@ -118,17 +119,17 @@
             </div>
         </div>
         <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-        <a href="#" class="text-sm font-semibold leading-6 text-white">Iniciar sesión <span aria-hidden="true">&rarr;</span></a>
+        <a href="#" class="text_menu text-sm font-semibold leading-6 text-black">Iniciar sesión <span aria-hidden="true">&rarr;</span></a>
         </div>
     </nav>
 <!-- Mobile menu, show/hide based on menu open state. -->
     <div id="movil_menu" class="lg:hidden md:hidden hidden" role="dialog" aria-modal="true">
         <!-- Background backdrop, show/hide based on slide-over state. -->
         <div class="fixed inset-0 z-10"></div>
-        <div class="z-40 fixed inset-y-0 right-0 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10  bg-cherry border-b-8 border-golden text-white">
+        <div class="z-40 fixed inset-y-0 right-0 w-full overflow-y-auto px-6 py-6 sm:max-w-sm bg-cherry border-b-8 border-golden">
             <div class="flex items-center justify-between">
                 <a href="#" class="-m-1.5 p-1.5">
-                <span class="sr-only">Your Company</span>
+                <span class="sr-only">{title}</span>
                 <img class="h-8 w-auto" src="/logo-1.png" alt="">
                 </a>
                 <button id="close_menu" type="button" class="-m-2.5 rounded-md p-2.5 text-white">
@@ -198,5 +199,6 @@
     </div>
 </header>
 <script >
+    import "../scripts/scroll.js";
     import "../scripts/open_menu.js"
 </script>

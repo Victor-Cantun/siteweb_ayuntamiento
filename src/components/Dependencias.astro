@@ -1,4 +1,5 @@
 ---
+import CardDependencia from "../components/CardDependencia.astro";
 const dependences=[
     {
         id:"1",
@@ -82,17 +83,7 @@ const dependences=[
                 <p class="text-xl font-bold tracking-tight text-cherry py-3">DEPENDENCIAS</p>
             </div>
             <div class="mx-auto grid max-w-7xl gap-x-8 gap-y-10 px-6 lg:px-8 lg:grid-cols-2 xl:grid-cols-3 ">
-                {dependences.map((_item)=>
-                <div class="grid relative shadow rounded overflow-hidden before:absolute before:bg-cherry before:w-[5px] before:h-[400px] before:z-0 before:transition-all hover:before:w-full hover:before:h-full after:absolute after:inset-[5px] after:z-0 after:bg-white">
-                    <div class="flex items-center gap-x-6 px-3 py-2 z-10">
-                        <img class="h-16 w-16 rounded-full " src={_item.photo} alt="">
-                        <div>
-                            <h3 class="text-base font-semibold leading-7 tracking-tight text-gray-900">{_item.director}</h3>
-                            <p class="text-sm font-semibold leading-6 text-cherry">{_item.direction}</p>
-                            <p class="text-sm font-semibold leading-6 text-gray-800"> {_item.phone}</p>
-                        </div>
-                    </div>
-                </div> )}                                
+                {dependences.map((_item)=> <CardDependencia photo={_item.photo} director={_item.director} direction={_item.direction} phone={_item.phone}></CardDependencia>)}                                
             </div>
         </div>
     </article>
