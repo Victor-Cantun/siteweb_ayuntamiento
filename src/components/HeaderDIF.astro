@@ -1,0 +1,109 @@
+---
+const title = 'H. Ayuntamiento de Escárcega';
+---
+<header class="bg-white border-b-8 border-golden w-full fixed z-50" id="header">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between p-2 lg:px-8" aria-label="Global">
+        <div class="flex lg:flex-1">
+        <a href="#" class="-m-1 p-1">
+            <span class="sr-only">{title}</span>
+            <img class="h-[95px] w-[250px]" src="/logo_dif-2.png" alt="">
+        </a>
+        </div>
+        <div class="flex">
+            <button id="open_menu" type="button" class="text_menu -m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-black lg:hidden">
+                <span class="sr-only">Abrir menu</span>
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+        </div>
+        <div class="hidden lg:flex lg:gap-x-12">
+            <a href="/" class="text_menu text-sm font-semibold leading-6 text-black">Ayuntamiento</a>
+
+        </div>
+        <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+        <a href="#" class="text_menu text-sm font-semibold leading-6 text-black">Iniciar sesión <span aria-hidden="true">&rarr;</span></a>
+        </div>
+    </nav>
+<!-- Mobile menu, show/hide based on menu open state. -->
+    <div id="movil_menu" class="lg:hidden md:hidden hidden" role="dialog" aria-modal="true">
+        <!-- Background backdrop, show/hide based on slide-over state. -->
+        <div class="fixed inset-0 z-10"></div>
+        <div class="z-40 fixed inset-y-0 right-0 w-full overflow-y-auto px-6 py-6 sm:max-w-sm bg-cherry border-b-8 border-golden">
+            <div class="flex items-center justify-between">
+                <a href="#" class="-m-1.5 p-1.5">
+                <span class="sr-only">{title}</span>
+                <img class="h-8 w-auto" src="/logo-1.png" alt="">
+                </a>
+                <button id="close_menu" type="button" class="-m-2.5 rounded-md p-2.5 text-white">
+                    <span class="sr-only">Cerrar menu</span>
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div class="mt-6 flow-root sm:hidden">
+                <div class="-my-6 divide-y divide-gray-500/10">
+                    <div class="space-y-2 py-6">
+                        <a href="#" id="btn-movil_inicio" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">Inicio</a>
+                        <a href="#" id="btn-movil_ayuntamiento" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">Ayuntamiento</a>
+                        <a href="#Dependencias" id="btn-movil_dependencias" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">Dependencias</a>
+                        <div class="-mx-3">
+                            <button id="btn-movil_transparencia" type="button" class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black" aria-controls="disclosure-1" aria-expanded="false">
+                                Gaceta
+                                <!--
+                                Expand/collapse icon, toggle classes based on menu open state.
+
+                                Open: "rotate-180", Closed: ""
+                                -->
+                                <svg class="h-5 w-5 flex-none" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                            <!-- 'Product' sub-menu, show/hide based on menu state. -->
+                            <div class="mt-2 space-y-2 hidden" id="menu-movil_transparencia">
+                                <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">2016</a>
+                                <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">2017</a>
+                                <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">2018</a>
+                                <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">2019</a>
+                                <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">2020</a>
+                                <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">2021</a>
+                                <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">2022</a>
+                                <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">2023</a>
+                                <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">2024</a>
+                            </div>
+                        </div>
+                        <div class="-mx-3">
+                            <button id="btn-movil_gaceta" type="button" class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black" aria-controls="disclosure-1" aria-expanded="false">
+                                Transparencia
+                                <!--
+                                Expand/collapse icon, toggle classes based on menu open state.
+
+                                Open: "rotate-180", Closed: ""
+                                -->
+                                <svg class="h-5 w-5 flex-none" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                            <!-- 'Product' sub-menu, show/hide based on menu state. -->
+                            <div class="mt-2 space-y-2 hidden" id="menu-movil_gaceta">
+                                <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">Contabilidad Gubernamental</a>
+                                <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">Contabilidad SMDIF</a>
+                                <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">Contabilidad SMAPAE</a>
+                            </div>
+                        </div>
+                        <a href="/DIF"  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">DIF</a>
+                        <a href="/blog"  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">Blog</a>
+                    </div>
+                    <div class="py-6">
+                        <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">Log in</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<script >
+    import "../scripts/scroll.js";
+    import "../scripts/open_menu.js"
+</script>

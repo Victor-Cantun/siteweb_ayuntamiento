@@ -7,19 +7,21 @@ import Carousel from '../components/Carousel.astro';
 import Dependencias from '../components/Dependencias.astro';
 import CardMesaAtencion from '../components/CardMesaAtencion.astro'
 import CardApp from '../components/CardApp.astro'
+import Location from '../components/Location.astro';
 const title = 'H. Ayuntamiento de Escárcega';
 ---
 <Layout title={title} >
-	<main class="bg-slate-200 pt-[120px]">
+	<main class="bg-slate-100 pt-[120px] bg-repeat" style="background-image: url(/background.jpg)">
 		<Cabildo></Cabildo>
 		<Carousel></Carousel>
-		<section class="bg-fixed bg-cover bg-no-repeat bg-center" style="background-image: url(/jaguar.png)">
-			<article class="flex flex-wrap items-center space-x-1 w-4/5 mx-auto bg-[#ffffff80] px-2">
-				<CardMesaAtencion></CardMesaAtencion>
-				<CardApp></CardApp>
-			</article>
+		<section class="bg-white ml-[5%] mr-[5%]" >
+				<article class="flex flex-wrap items-center space-x-1 w-4/5 mx-auto bg-[#ffffff80] px-2">
+					<CardMesaAtencion></CardMesaAtencion>
+					<CardApp></CardApp>
+				</article>
+				<Dependencias></Dependencias>
 		</section>
-		<Dependencias></Dependencias>
+		<Location></Location>
 	</main>
 </Layout>
 
