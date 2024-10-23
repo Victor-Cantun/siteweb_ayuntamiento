@@ -3,7 +3,7 @@ import '../input.css'
 import '../output.css'
 import '../styles/style.css'
 import Header from './../components/Header.astro'
-import Footer from './../components/Footer.astro'
+
 
 interface Props {
 	title: string;
@@ -23,16 +23,15 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<div id="preloader">
+<!-- 		<div id="preloader">
 			<img id="logo" src="/logo-1.png" alt="logo">
 			<img id="slogan" src="/slogan.png" alt="alogan">
-		</div>
+		</div> -->
 		<div id="content">
 			<Header></Header>
 			<slot />
-			<Footer></Footer>
 		</div>
-		<script>import '../scripts/preload.js';</script>
+		<!-- <script>import '../scripts/preload.js';</script> -->
 		<script is:inline src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
 	</body>
 </html>

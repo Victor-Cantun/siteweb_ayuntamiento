@@ -16,7 +16,6 @@ const PoiMarkers = (props: { pois: Poi[] }) => {
     </>
   );
 };
-
 const MyMapComponent = () => (
   <APIProvider apiKey={"AIzaSyB3OjoQWgPW3DZKNoQqqSnKc4xWKyRmFlg"} onLoad={() => console.log("Maps API has loaded.")}>
     <Map

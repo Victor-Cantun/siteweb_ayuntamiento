@@ -10,9 +10,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        golden: "#C2AE92",
-        cherry: "#691C32",
-        neutral: "#ECECEC",
+        golden: "#E99B2E",
+        cherry: "#861F3C",
+        neutral: "#767676",
+        verde: "#2A6C62",
       },
     },
   },

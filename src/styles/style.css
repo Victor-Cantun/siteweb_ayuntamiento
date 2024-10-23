@@ -29,5 +29,5 @@
   animation: zoomIn 1.5s forwards;
 }
 #content {
-  display: none;
+  display: inline;
 }

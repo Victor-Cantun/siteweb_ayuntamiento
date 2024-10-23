@@ -1,17 +1,12 @@
 ---
-import Layout from '../layouts/Layout.astro'
 const title = 'H. Ayuntamiento de Escárcega';
-
-
-const response = await fetch('https://pokeapi.co/api/v2/ability/?limit=20&offset=0');
-const data = await response.json();
-const pokemons = data.results;
+import ComponentBlog from '../components/ComponentBlog.astro';
+import Layout from '../layouts/Layout.astro'
 
 ---
 
 <Layout title={title}>
-    <h1 class="pt-[120px]">Estoy en el blog del ayuntamiento</h1>
-<ul>
-    {pokemons.map(pokemon => (<li>{pokemon.name}</li>))}
-</ul>
+    <main class="bg-repeat" style="background-image: url(/background.jpg)">
+        <ComponentBlog></ComponentBlog>
+    </main>
 </Layout>

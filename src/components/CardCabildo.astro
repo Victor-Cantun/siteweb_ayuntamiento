@@ -1,5 +1,5 @@
 ---
-const {photo,director,direction,phone} = Astro.props;
+const {photo,position,name,phone} = Astro.props;
 import { api } from '../api/api.js';
 ---
 <div class="bg-white grid relative shadow rounded overflow-hidden before:absolute before:bg-verde before:w-[5px] before:h-[400px] before:z-0 before:transition-all hover:before:w-full hover:before:h-full after:absolute after:inset-[5px] after:z-0 after:bg-white">
@@ -8,9 +8,9 @@ import { api } from '../api/api.js';
             <img class="h-16 w-16 rounded-full " src={api+photo} alt="">
         </div>
         <div class="w-full  md:w-2/3 lg:w-2/3 px-2">
-            <h3 class="text-sm font-semibold leading-7 tracking-tight text-cherry">{direction}</h3>
-            <p class="text-sm font-semibold leading-6 text-gray-800" >{director}</p>
-            <p class="text-sm font-semibold leading-6 text-gray-700"> {phone}</p>
+            <h3 class="text-sm leading-7 tracking-tight text-gray-800">{name}</h3>
+            <p class="text-sm font-semibold leading-6 text-cherry" >{position}</p>
+            <p class="text-sm  leading-6 text-gray-700"> {phone}</p>
         </div>
     </div>
 </div>

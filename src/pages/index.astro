@@ -4,24 +4,23 @@ import '../output.css'
 import Layout from '../layouts/Layout.astro';
 import Cabildo from '../components/Cabildo.astro';
 import Carousel from '../components/Carousel.astro';
+import ComponentBlog from '../components/ComponentBlog.astro';
 import Dependencias from '../components/Dependencias.astro';
 import CardMesaAtencion from '../components/CardMesaAtencion.astro'
 import CardApp from '../components/CardApp.astro'
 import Location from '../components/Location.astro';
+import Footer from '../components/Footer.astro'
 const title = 'H. Ayuntamiento de Escárcega';
 ---
 <Layout title={title} >
 	<main class="bg-slate-100 pt-[120px] bg-repeat" style="background-image: url(/background.jpg)">
-		<Cabildo></Cabildo>
+		
 		<Carousel></Carousel>
-		<section class="bg-white ml-[5%] mr-[5%]" >
-				<article class="flex flex-wrap items-center space-x-1 w-4/5 mx-auto bg-[#ffffff80] px-2">
-					<CardMesaAtencion></CardMesaAtencion>
-					<CardApp></CardApp>
-				</article>
-				<Dependencias></Dependencias>
-		</section>
+		<ComponentBlog></ComponentBlog>
+		<Cabildo></Cabildo>
+		<Dependencias></Dependencias>
 		<Location></Location>
+		<Footer></Footer>
 	</main>
 </Layout>
 

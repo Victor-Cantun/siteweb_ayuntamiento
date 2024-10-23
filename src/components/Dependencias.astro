@@ -1,90 +1,18 @@
 ---
 import CardDependencia from "../components/CardDependencia.astro";
-const dependences=[
-    {
-        id:"1",
-        director:'Lic. Henry Alexis Jiménez Pérez',
-        direction:'Sistema para el Desarrollo Integral de la Familia',
-        phone:'(982)824-3485',
-        address:'',
-        photo:'https://ui-avatars.com/api/?name=Henry+Jiménez'
-    },
-    {
-        id:"2",
-        director:'Licda. Angélica Orozco Ortiz',
-        direction:'Procuraduría Federal del Consumidor',
-        phone:'(982)824-3152',
-        address:'',
-        photo:'https://ui-avatars.com/api/?name=Angelica+Ortiz'
-    },
-    {
-        id:"3",
-        director:'Lic. Manuel de Jesús Escobar Suárez',
-        direction:'Instituto de la Juventud',
-        phone:'(982)105-9793',
-        address:'',
-        photo:'https://ui-avatars.com/api/?name=Manuel+Escobar'
-    },
-    {
-        id:"4",
-        director:'Lic. Manuel de Jesús Escobar Piña',
-        direction:'Agua Potable y Alcantarillado',
-        phone:'',
-        address:'',
-        photo:'https://ui-avatars.com/api/?name=Manuel+Escobar'
-    },
-    {
-        id:"5",
-        director:'BR. Sergio Enrique Luna Gómez',
-        direction:'Dirección de Protección Civil',
-        phone:'',
-        address:'',
-        photo:'https://ui-avatars.com/api/?name=Sergio+Luna'
-    },
-    {
-        id:"6",
-        director:'Arq. Irvin del Cármen Arjona Rodríguez',
-        direction:'Dirección de Obras Públicas',
-        phone:'(982)824-1800',
-        address:'',
-        photo:'https://ui-avatars.com/api/?name=Irvin+Arjona'
-    },
-    {
-        id:'7',
-        director:'Lic. María Guadalupe González',
-        direction:'Instituto de la Mujer',
-        phone:'(982)1256723',
-        address:'',
-        photo:'https://ui-avatars.com/api/?name=Maria+González',
-    },
-    {
-        id:'8',
-        director:'Br. Julio Cesar Amaro Almeida',
-        direction:'Dirección de Servicios Públicos',
-        phone:'(982)824-0082',
-        address:'',
-        photo:'https://ui-avatars.com/api/?name=Julio+Amaro',
-    },
-    {
-        id:'9',
-        director:'L.C.P. Ricardo Felipe Montejo',
-        direction:'Órgano Interno de Control',
-        phone:'(982)824-0211',
-        address:'',
-        photo:'https://ui-avatars.com/api/?name=Ricardo+Montejo',
-    },
-]
-
+import { api } from '../api/api.js';
+const response = await fetch(`${api}/listDependences`);
+const dependences= await response.json();
 ---
-<section id="Dependencias" class="" >
-    <article class="">
-        <div class="w-4/5 mx-auto py-5">
-            <div class="flex justify-center items-center">
-                <p class="text-xl font-bold tracking-tight text-cherry py-3">DEPENDENCIAS</p>
-            </div>
-            <div class="mx-auto grid max-w-7xl gap-x-8 gap-y-10 px-6 lg:px-8 lg:grid-cols-2 xl:grid-cols-3 ">
-                {dependences.map((_item)=> <CardDependencia photo={_item.photo} director={_item.director} direction={_item.direction} phone={_item.phone}></CardDependencia>)}                                
+<section id="Dependencias" class=" bg-white pt-[4%] pb-[4%]" >
+    <div class=" ml-[2%] mr-[2%] w-auto  pt-[2%] pb-[2%]">
+        <div class="w-full flex justify-center">
+            <h2 class=" text-xl font-bold tracking-tight text-cherry py-3">DEPENDENCIAS</h2>
+        </div>
+        <div class="w-full py-5">
+            <div class="mx-auto grid w-auto max-w-7xl gap-x-2 gap-y-10 px-6 lg:px-8 lg:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 ">
+                {dependences.map((_item)=> <CardDependencia photo={_item.director_detail.profile_image} director={_item.director_name} direction={_item.name} phone={_item.phone}></CardDependencia>)}                                
             </div>
         </div>
-    </article>
+    </div>
 </section>

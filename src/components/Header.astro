@@ -1,12 +1,16 @@
 ---
 const title = 'H. Ayuntamiento de Escárcega';
+import { api } from '../api/api.js';
+const response = await fetch(`${api}/listAccounting`);
+const contabilidad = await response.json();
+import ListContabilidad from "../components/ListContabilidad.astro";
 ---
 <header class="bg-white border-b-8 border-golden w-full fixed z-50" id="header">
     <nav class="mx-auto flex max-w-7xl items-center justify-between p-2 lg:px-8" aria-label="Global">
         <div class="flex lg:flex-1">
-        <a href="#" class="-m-1 p-1">
+        <a href="/" class="-m-1 p-1">
             <span class="sr-only">{title}</span>
-            <img class="h-[95px] w-[250px]" src="/logo-2.png" alt="">
+            <img class="h-[90px] w-[250px]" src="/logo-2.png" alt="">
         </a>
         </div>
         <div class="flex">
@@ -18,17 +22,17 @@ const title = 'H. Ayuntamiento de Escárcega';
             </button>
         </div>
         <div class="hidden lg:flex lg:gap-x-12">
-            <a href="#" class="text_menu text-sm font-semibold leading-6 text-black">Inicio</a>
-            <div class="relative">
+            <a href="/" class="text_menu text-sm font-semibold leading-6 text-black">Inicio</a>
+            <!--<div class="relative">
                 <button id="btn_ayuntamiento" type="button" class="text_menu flex items-center gap-x-1 text-sm font-semibold leading-6 text-black " aria-expanded="false">
                     Ayuntamiento
                     <svg class="h-5 w-5 flex-none text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                         <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
                     </svg>
                 </button>
-            </div>
-            <a href="#Dependencias" class="text_menu text-sm font-semibold leading-6 text-black">Dependencias</a>
-            <div class="relative">
+            </div> -->
+            <!-- <a href="#Dependencias" class="text_menu text-sm font-semibold leading-6 text-black">Dependencias</a> -->
+<!--             <div class="relative">
                 <button id="btn_gaceta" type="button" class="text_menu flex items-center gap-x-1 text-sm font-semibold leading-6 text-black" aria-expanded="false">
                     Gaceta
                     <svg class="h-5 w-5 flex-none text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -68,7 +72,7 @@ const title = 'H. Ayuntamiento de Escárcega';
                         </ul>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="relative">
                 <button id="btn_transparencia" type="button" class="text_menu flex items-center gap-x-1 text-sm font-semibold leading-6 text-black" aria-expanded="false">
                     Transparencia
@@ -77,51 +81,18 @@ const title = 'H. Ayuntamiento de Escárcega';
                     </svg>
                 </button>
                 <div id="menu_transparencia" class="absolute -left-8 top-full z-40 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5 hidden ">
-                    <div class="p-4">
-                        <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
-                            <div class="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-golden">
-                                <svg class="h-6 w-6 text-gray-600 group-hover:text-cherry" fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M19 2H5c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zM5 20V4h14l.001 16H5z"></path><path d="M7 12h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zM7 6h10v4H7zm4 10h2v2h-2zm4-4h2v6h-2z"></path></svg>
-                            </div>
-                            <div class="flex-auto">
-                                <a href="#" class="block font-semibold text-gray-900 hover:text-cherry">
-                                Contabilidad Gubernamental
-                                <span class="absolute inset-0"></span>
-                                </a>
-                                <!-- <p class="mt-1 text-gray-600">Get a better understanding of your traffic</p> -->
-                            </div>
-                        </div>
-                        <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
-                            <div class="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-golden">
-                                <svg class="h-6 w-6 text-gray-600 group-hover:text-cherry" fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><circle cx="9" cy="4" r="2"></circle><path d="M16.98 14.804A1 1 0 0 0 16 14h-4.133l-.429-3H16V9h-4.847l-.163-1.142A1 1 0 0 0 10 7H9a1.003 1.003 0 0 0-.99 1.142l.877 6.142A2.009 2.009 0 0 0 10.867 16h4.313l.839 4.196c.094.467.504.804.981.804h3v-2h-2.181l-.839-4.196z"></path><path d="M12.51 17.5c-.739 1.476-2.25 2.5-4.01 2.5A4.505 4.505 0 0 1 4 15.5a4.503 4.503 0 0 1 2.817-4.167l-.289-2.025C3.905 10.145 2 12.604 2 15.5 2 19.084 4.916 22 8.5 22a6.497 6.497 0 0 0 5.545-3.126l-.274-1.374H12.51z"></path></svg>
-                            </div>
-                            <div class="flex-auto">
-                                <a href="#" class="block font-semibold text-gray-900 hover:text-cherry">
-                                Contabilidad SMDIF
-                                <span class="absolute inset-0"></span>
-                                </a>
-                                <!-- <p class="mt-1 text-gray-600">Speak directly to your customers</p> -->
-                            </div>
-                        </div>
-                        <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
-                            <div class="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-golden">
-                                <svg class="h-6 w-6 text-gray-600 group-hover:text-cherry" fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M12 22c4.636 0 8-3.468 8-8.246C20 7.522 12.882 2.4 12.579 2.185a1 1 0 0 0-1.156-.001C11.12 2.397 4 7.503 4 13.75 4 18.53 7.364 22 12 22zm-.001-17.74C13.604 5.55 18 9.474 18 13.754 18 17.432 15.532 20 12 20s-6-2.57-6-6.25c0-4.29 4.394-8.203 5.999-9.49z"></path></svg>
-                            </div>
-                            <div class="flex-auto">
-                                <a href="#" class="block font-semibold text-gray-900 hover:text-cherry">
-                                Contabilidad SMAPAE
-                                <span class="absolute inset-0"></span>
-                                </a>
-                                <!-- <p class="mt-1 text-gray-600">Your customers’ data will be safe and secure</p> -->
-                            </div>
-                        </div>
+                    <div class="mx-auto max-w-lg">
+                        <ul class="divide-y divide-gray-200 rounded-xl border border-gray-200 shadow-sm">
+                           {contabilidad.map((_item)=><ListContabilidad link={_item.document} title={_item.name}  ></ListContabilidad> )}
+                        </ul>
                     </div>
                 </div>
             </div>
-            <a href="/DIF" class="text_menu text-sm font-semibold leading-6 text-black">DIF</a>
+            <!-- <a href="/DIF" class="text_menu text-sm font-semibold leading-6 text-black">DIF</a> -->
             <a href="/blog" class="text_menu text-sm font-semibold leading-6 text-black">Blog</a>
         </div>
         <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-        <a href="#" class="text_menu text-sm font-semibold leading-6 text-black">Iniciar sesión <span aria-hidden="true">&rarr;</span></a>
+        <!-- <a href="#" class="text_menu text-sm font-semibold leading-6 text-black">Iniciar sesión <span aria-hidden="true">&rarr;</span></a> -->
         </div>
     </nav>
 <!-- Mobile menu, show/hide based on menu open state. -->
@@ -145,21 +116,16 @@ const title = 'H. Ayuntamiento de Escárcega';
                 <div class="-my-6 divide-y divide-gray-500/10">
                     <div class="space-y-2 py-6">
                         <a href="#" id="btn-movil_inicio" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">Inicio</a>
-                        <a href="#" id="btn-movil_ayuntamiento" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">Ayuntamiento</a>
-                        <a href="#Dependencias" id="btn-movil_dependencias" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">Dependencias</a>
-                        <div class="-mx-3">
+                        <!-- <a href="#" id="btn-movil_ayuntamiento" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">Ayuntamiento</a>
+                        <a href="#Dependencias" id="btn-movil_dependencias" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">Dependencias</a> -->
+<!--                         <div class="-mx-3">
                             <button id="btn-movil_transparencia" type="button" class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black" aria-controls="disclosure-1" aria-expanded="false">
                                 Gaceta
-                                <!--
-                                Expand/collapse icon, toggle classes based on menu open state.
-
-                                Open: "rotate-180", Closed: ""
-                                -->
                                 <svg class="h-5 w-5 flex-none" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                 <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
                                 </svg>
                             </button>
-                            <!-- 'Product' sub-menu, show/hide based on menu state. -->
+
                             <div class="mt-2 space-y-2 hidden" id="menu-movil_transparencia">
                                 <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">2016</a>
                                 <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">2017</a>
@@ -171,7 +137,7 @@ const title = 'H. Ayuntamiento de Escárcega';
                                 <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">2023</a>
                                 <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">2024</a>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="-mx-3">
                             <button id="btn-movil_gaceta" type="button" class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black" aria-controls="disclosure-1" aria-expanded="false">
                                 Transparencia
@@ -185,17 +151,17 @@ const title = 'H. Ayuntamiento de Escárcega';
                                 </svg>
                             </button>
                             <!-- 'Product' sub-menu, show/hide based on menu state. -->
-                            <div class="mt-2 space-y-2 hidden" id="menu-movil_gaceta">
+<!--                             <div class="mt-2 space-y-2 hidden" id="menu-movil_gaceta">
                                 <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">Contabilidad Gubernamental</a>
                                 <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">Contabilidad SMDIF</a>
                                 <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">Contabilidad SMAPAE</a>
-                            </div>
+                            </div> -->
                         </div>
-                        <a href="/DIF"  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">DIF</a>
+                        <!-- <a href="/DIF"  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">DIF</a> -->
                         <a href="/blog"  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">Blog</a>
                     </div>
                     <div class="py-6">
-                        <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">Log in</a>
+                        <!-- <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">Log in</a> -->
                     </div>
                 </div>
             </div>
