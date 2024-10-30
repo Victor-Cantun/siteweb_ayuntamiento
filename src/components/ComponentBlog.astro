@@ -6,8 +6,8 @@ const data = await response.json();
 const posts = data;
 import ItemBlog from "../components/ItemBlog.astro";
 ---
-<section class="bg-slate-100 pt-28 ml-[5%] mr-[5%] flex justify-center">
-    <div class="md:grid md:grid-cols-2 md:gap-2 flex flex-wrap gap-3 w-auto mt-1 border-gray-200 shadow-sm border-y dark:bg-gray-800 dark:border-gray-600 px-2">
-        {posts.map((_item) => <ItemBlog title={_item.title} content={_item.content} creation={_item.created_at} images={_item.images}></ItemBlog>)}
+<section  class="bg-slate-100 pt-28 ml-[5%] mr-[5%] flex justify-center mt-5 mb-5">
+    <div class="md:grid md:grid-cols-2 lg:grid-cols-3 sm:flex sm:flex-col gap-4 w-auto border-gray-200 shadow-sm border-y dark:bg-gray-800 dark:border-gray-600 ">
+        {posts.map((_item) => <ItemBlog id={_item.id} title={_item.title} content={_item.content} creation={_item.created_at} images={_item.images}></ItemBlog>)}
     </div>
 </section>

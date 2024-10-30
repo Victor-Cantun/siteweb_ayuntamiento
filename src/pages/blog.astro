@@ -1,12 +1,18 @@
 ---
 const title = 'H. Ayuntamiento de Escárcega';
-import ComponentBlog from '../components/ComponentBlog.astro';
+import MyBlog from '../components/Blog';
 import Layout from '../layouts/Layout.astro'
 
 ---
-
 <Layout title={title}>
     <main class="bg-repeat" style="background-image: url(/background.jpg)">
-        <ComponentBlog></ComponentBlog>
+        <section class="bg-slate-100 pt-28 ml-[5%] mr-[5%] flex justify-center ">
+            <div class="md:grid md:grid-cols-2 lg:grid-cols-3 sm:flex sm:flex-col gap-4 w-auto border-gray-200 shadow-sm border-y dark:bg-gray-800 dark:border-gray-600 ">
+                <MyBlog client:load></MyBlog>
+            </div>
+        </section>
     </main>
 </Layout>
+
+
+

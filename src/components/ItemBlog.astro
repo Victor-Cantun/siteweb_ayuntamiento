@@ -1,17 +1,17 @@
 ---
-const {title,content,creation, images } = Astro.props;
+const {id,title,content,creation, images } = Astro.props;
 import CarouselBlog from "../components/CarouselBlog.astro";
 const newDate = new Date(creation).toLocaleDateString('es-MX');
 ---
 
-<div class="max-w-md bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+<div class="max-w-md bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 my-2">
     <a href="#">
         
-        <CarouselBlog images={images}></CarouselBlog>
+        <CarouselBlog id={id} images={images}></CarouselBlog>
     </a>
     <div class="p-5">
         <a href="#">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{title}</h5>
+            <h5 class="mb-2 text-base font-bold tracking-tight text-green-700 dark:text-white">{title}</h5>
         </a>
         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{content}</p>
         <p class="text-sm text-gray-400">{newDate}</p>

@@ -2,19 +2,18 @@
 import '../input.css'
 import '../output.css'
 import Layout from '../layouts/Layout.astro';
-import Cabildo from '../components/Cabildo.astro';
-import Carousel from '../components/Carousel.astro';
-import Dependencias from '../components/Dependencias.astro';
+import Cabildo from '../components/Cabildo.jsx';
+import Dependencias from '../components/Dependencias.jsx';
 import Location from '../components/Location.astro';
-import Footer from '../components/Footer.astro'
+import Footer from '../components/Footer.astro';
+import CarouselMain from '../components/CarouselMain';
 const title = 'H. Ayuntamiento de Escárcega';
 ---
 <Layout title={title} >
-	<main class="bg-slate-100 pt-[120px] bg-repeat" style="background-image: url(/background.jpg)">
-		
-		<Carousel></Carousel>
-		<Cabildo></Cabildo>
-		<Dependencias></Dependencias>
+	<main class="bg-slate-100 pt-[5%] bg-repeat" style="background-image: url(/background.jpg)">
+		<CarouselMain client:load ></CarouselMain>
+		<Cabildo client:load></Cabildo>
+		<Dependencias client:load></Dependencias>
 		<Location></Location>
 		<Footer></Footer>
 	</main>

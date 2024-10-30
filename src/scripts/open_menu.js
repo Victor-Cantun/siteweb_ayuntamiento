@@ -7,9 +7,9 @@ document.querySelector("#close_menu").addEventListener("click", () => {
 document.querySelector("#btn_transparencia").addEventListener("click", () => {
   document.querySelector("#menu_transparencia").classList.toggle("hidden");
 });
-/* document.querySelector("#btn_gaceta").addEventListener("click", () => {
+document.querySelector("#btn_gaceta").addEventListener("click", () => {
   document.querySelector("#menu_gaceta").classList.toggle("hidden");
-}); */
+});
 /* document.querySelector("#btn_ayuntamiento").addEventListener("click", () => {
   document.querySelector("#menu_ayuntamiento").classList.toggle("hidden");
 }); */
@@ -28,6 +28,6 @@ document.querySelector("#btn-movil_inicio").addEventListener("click", () => {
 document.querySelector("#btn-movil_transparencia").addEventListener("click", () => {
   document.querySelector("#menu-movil_transparencia").classList.toggle("hidden");
 });
-/* document.querySelector("#btn-movil_gaceta").addEventListener("click", () => {
+document.querySelector("#btn-movil_gaceta").addEventListener("click", () => {
   document.querySelector("#menu-movil_gaceta").classList.toggle("hidden");
-}); */
+});

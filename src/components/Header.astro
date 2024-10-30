@@ -23,56 +23,8 @@ import ListContabilidad from "../components/ListContabilidad.astro";
         </div>
         <div class="hidden lg:flex lg:gap-x-12">
             <a href="/" class="text_menu text-sm font-semibold leading-6 text-black">Inicio</a>
-            <!--<div class="relative">
-                <button id="btn_ayuntamiento" type="button" class="text_menu flex items-center gap-x-1 text-sm font-semibold leading-6 text-black " aria-expanded="false">
-                    Ayuntamiento
-                    <svg class="h-5 w-5 flex-none text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-                    </svg>
-                </button>
-            </div> -->
+            <a href="#Cabildo" class="text_menu text-sm font-semibold leading-6 text-black">Cabildo</a>
             <a href="#Dependencias" class="text_menu text-sm font-semibold leading-6 text-black">Dependencias</a>
-            <!--<div class="relative">
-                <button id="btn_gaceta" type="button" class="text_menu flex items-center gap-x-1 text-sm font-semibold leading-6 text-black" aria-expanded="false">
-                    Gaceta
-                    <svg class="h-5 w-5 flex-none text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-                    </svg>
-                </button>
-                <div id="menu_gaceta" class="absolute -left-8 top-full z-40 mt-3 w-screen max-w-xs overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5 hidden ">
-                    <div class="mx-auto max-w-lg">
-                        <ul class="divide-y divide-gray-200 rounded-xl border border-gray-200 shadow-sm">
-                            <li class="p-2 hover:bg-gray-50 cursor-pointer">
-                                <p class="text-lg font-medium leading-loose pl-4"><a href="#">2016</a></p>
-                            </li>
-                            <li class="p-2 hover:bg-gray-50 cursor-pointer">
-                                <p class="text-lg font-medium leading-loose pl-4"><a href="#">2017</a></p>
-                            </li>
-                            <li class="p-2 hover:bg-gray-50 cursor-pointer">
-                                <p class="text-lg font-medium leading-loose pl-4"><a href="#">2018</a></p>
-                            </li>
-                            <li class="p-2 hover:bg-gray-50 cursor-pointer">
-                                <p class="text-lg font-medium leading-loose pl-4"><a href="#">2019</a></p>
-                            </li>
-                            <li class="p-2 hover:bg-gray-50 cursor-pointer">
-                                <p class="text-lg font-medium leading-loose pl-4"><a href="#">2020</a></p>
-                            </li>
-                            <li class="p-2 hover:bg-gray-50 cursor-pointer">
-                                <p class="text-lg font-medium leading-loose pl-4"><a href="#">2021</a></p>
-                            </li>
-                            <li class="p-2 hover:bg-gray-50 cursor-pointer">
-                                <p class="text-lg font-medium leading-loose pl-4"><a href="#">2022</a></p>
-                            </li>
-                            <li class="p-2 hover:bg-gray-50 cursor-pointer">
-                                <p class="text-lg font-medium leading-loose pl-4"><a href="#">2023</a></p>
-                            </li>
-                            <li class="p-2 hover:bg-gray-50 cursor-pointer">
-                                <p class="text-lg font-medium leading-loose pl-4"><a href="#">2024</a></p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div> -->
             <div class="relative">
                 <button id="btn_transparencia" type="button" class="text_menu flex items-center gap-x-1 text-sm font-semibold leading-6 text-black" aria-expanded="false">
                     Transparencia
@@ -83,12 +35,36 @@ import ListContabilidad from "../components/ListContabilidad.astro";
                 <div id="menu_transparencia" class="absolute -left-8 top-full z-40 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5 hidden ">
                     <div class="mx-auto max-w-lg">
                         <ul class="divide-y divide-gray-200 rounded-xl border border-gray-200 shadow-sm">
-                           {contabilidad.map((_item)=><ListContabilidad link={_item.document} title={_item.name}  ></ListContabilidad> )}
+                            <li class="p-2 hover:bg-gray-50 cursor-pointer">
+                                <p class="text-lg font-medium leading-loose pl-4"><a href="https://transparencia.escarcega.gob.mx/contabilidad/">Contabilidad Gubernamental</a></p>
+                            </li>
+                            <li class="p-2 hover:bg-gray-50 cursor-pointer">
+                                <p class="text-lg font-medium leading-loose pl-4"><a href="https://smdif.escarcega.gob.mx/contabilidad/">Contabilidad SMDIF</a></p>
+                            </li>
+                            <li class="p-2 hover:bg-gray-50 cursor-pointer">
+                                <p class="text-lg font-medium leading-loose pl-4"><a href="">Contabilidad SMAPAE</a></p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>            
+            <div class="relative">
+                <button id="btn_gaceta" type="button" class="text_menu flex items-center gap-x-1 text-sm font-semibold leading-6 text-black" aria-expanded="false">
+                    Gaceta
+                    <svg class="h-5 w-5 flex-none text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+                <div id="menu_gaceta" class="absolute -left-8 top-full z-40 mt-3 w-screen max-w-xs overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5 hidden ">
+                    <div class="mx-auto max-w-lg">
+                        <ul class="divide-y divide-gray-200 rounded-xl border border-gray-200 shadow-sm">
+                            <li class="p-2 hover:bg-gray-50 cursor-pointer">
+                                <p class="text-lg font-medium leading-loose pl-4"><a href="#"></a></p>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <!-- <a href="/DIF" class="text_menu text-sm font-semibold leading-6 text-black">DIF</a> -->
             <a href="/blog" class="text_menu text-sm font-semibold leading-6 text-black">Blog</a>
         </div>
         <div class="hidden lg:flex lg:flex-1 lg:justify-end">
@@ -116,47 +92,33 @@ import ListContabilidad from "../components/ListContabilidad.astro";
                 <div class="-my-6 divide-y divide-gray-500/10">
                     <div class="space-y-2 py-6">
                         <a href="#" id="btn-movil_inicio" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">Inicio</a>
-                        <!-- <a href="#" id="btn-movil_ayuntamiento" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">Ayuntamiento</a>
-                        <a href="#Dependencias" id="btn-movil_dependencias" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">Dependencias</a> -->
-<!--                         <div class="-mx-3">
+                        <a href="#" id="btn-movil_cabildo" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">Cabildo</a>
+                        <a href="#" id="btn-movil_dependencias" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">Dependencias</a>
+                        <div class="-mx-3">
                             <button id="btn-movil_transparencia" type="button" class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black" aria-controls="disclosure-1" aria-expanded="false">
+                                Transparencia
+                                <svg class="h-5 w-5 flex-none" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                            <div class="mt-2 space-y-2 hidden" id="menu-movil_transparencia">
+                                <a href="https://transparencia.escarcega.gob.mx/contabilidad/" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">Contabilidad Gubernamental</a>
+                                <a href="https://smdif.escarcega.gob.mx/contabilidad/" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">Contabilidad SMDIF</a>
+                                <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">Contabilidad SMAPAE</a>
+                            </div>
+                        </div>
+                        <div class="-mx-3">
+                            <button id="btn-movil_gaceta" type="button" class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black" aria-controls="disclosure-1" aria-expanded="false">
                                 Gaceta
                                 <svg class="h-5 w-5 flex-none" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                 <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
                                 </svg>
                             </button>
 
-                            <div class="mt-2 space-y-2 hidden" id="menu-movil_transparencia">
-                                <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">2016</a>
-                                <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">2017</a>
-                                <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">2018</a>
-                                <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">2019</a>
-                                <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">2020</a>
-                                <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">2021</a>
-                                <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">2022</a>
-                                <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">2023</a>
-                                <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">2024</a>
+                            <div class="mt-2 space-y-2 hidden" id="menu-movil_gaceta">
+                                <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black"></a>
                             </div>
-                        </div> -->
-                        <div class="-mx-3">
-                            <button id="btn-movil_gaceta" type="button" class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black" aria-controls="disclosure-1" aria-expanded="false">
-                                Transparencia
-                                <!--
-                                Expand/collapse icon, toggle classes based on menu open state.
-
-                                Open: "rotate-180", Closed: ""
-                                -->
-                                <svg class="h-5 w-5 flex-none" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-                                </svg>
-                            </button>
-                            <!-- 'Product' sub-menu, show/hide based on menu state. -->
-<!--                             <div class="mt-2 space-y-2 hidden" id="menu-movil_gaceta">
-                                <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">Contabilidad Gubernamental</a>
-                                <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">Contabilidad SMDIF</a>
-                                <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">Contabilidad SMAPAE</a>
-                            </div> -->
-                        </div>
+                        </div>                        
                         <!-- <a href="/DIF"  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">DIF</a> -->
                         <a href="/blog"  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">Blog</a>
                     </div>

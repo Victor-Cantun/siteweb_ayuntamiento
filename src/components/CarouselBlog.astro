@@ -1,16 +1,20 @@
 ---
-const {images } = Astro.props;
+const {id,images } = Astro.props;
 import ItemCarouselBlog from "../components/ItemCarouselBlog.astro";
 //console.log('http://127.0.0.1:8000',images)
 import { api } from '../api/api.js';
+
 ---
 
-<div id="controls-carousel" class="relative w-full" data-carousel="static">
+<div id="controls-carousel" class="relative w-full" data-carousel="static" data-modal-target={id} data-modal-toggle={id}>
     <!-- Carousel wrapper -->
     <div class="relative h-56 overflow-hidden rounded-lg md:h-56">
         {images.map((_item)=>
-    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+    <div class="hidden duration-700 ease-in-out"  data-carousel-item>
+        
+
         <img src={api+_item.image}  class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+
     </div>
     )}
     </div>
@@ -31,4 +35,22 @@ import { api } from '../api/api.js';
             <span class="sr-only">Next</span>
         </span>
     </button>
+</div>
+
+
+
+
+
+<!-- Main modal -->
+<div id={id} tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-2xl max-h-full">
+
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+
+           {images.map((_item)=>
+           <img src={api+_item.image}  class="w-full" alt="...">
+            )}
+
+        </div>
+    </div>
 </div>
