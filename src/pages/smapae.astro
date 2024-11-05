@@ -1,0 +1,14 @@
+---
+const title = 'H. Ayuntamiento de Escárcega';
+import ContabilidadSMAPAC from '../components/ContabilidadSMAPAC';
+import Layout from '../layouts/Layout.astro'
+---
+<Layout title={title}>
+    <main class="bg-repeat" style="background-image: url(/background.jpg)">
+        <section class="bg-slate-100 pt-28 ml-[5%] mr-[5%] flex justify-center ">
+            <div class="my-10">
+                <ContabilidadSMAPAC client:load></ContabilidadSMAPAC>
+            </div>
+        </section>
+    </main>
+</Layout>

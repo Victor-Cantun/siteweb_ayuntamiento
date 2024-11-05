@@ -37,7 +37,7 @@ const CarouselMain = () => {
         <button onClick={goToPrevious} className="carousel-button prev">
           ◀
         </button>
-        <div className="carousel-image-container w-full h-[95vh]">{data.length > 0 && <img src={api + data[currentIndex].image} alt={`Slide ${currentIndex + 1}`} className="carousel-image" />}</div>
+        <div className="carousel-image-container w-full h-full">{data.length > 0 && <img src={api + data[currentIndex].image} alt={`Slide ${currentIndex + 1}`} className="carousel-image" />}</div>
         <button onClick={goToNext} className="carousel-button next">
           ▶
         </button>

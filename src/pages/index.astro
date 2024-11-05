@@ -7,15 +7,19 @@ import Dependencias from '../components/Dependencias.jsx';
 import Location from '../components/Location.astro';
 import Footer from '../components/Footer.astro';
 import CarouselMain from '../components/CarouselMain';
+import { Animacion } from '../components/Animacion';
+import Contenido from '../components/Contenido.jsx';
 const title = 'H. Ayuntamiento de Escárcega';
 ---
 <Layout title={title} >
 	<main class="bg-slate-100 pt-[5%] bg-repeat" style="background-image: url(/background.jpg)">
-		<CarouselMain client:load ></CarouselMain>
+		<CarouselMain client:load></CarouselMain>
 		<Cabildo client:load></Cabildo>
 		<Dependencias client:load></Dependencias>
 		<Location></Location>
 		<Footer></Footer>
+		<!-- <Animacion client:load></Animacion> -->
+		<!-- <Contenido client:load></Contenido> -->
 	</main>
 </Layout>
 
