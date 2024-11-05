@@ -6,7 +6,7 @@ const ContabilidadSMAPAC = () => {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch(`http://127.0.0.1:8000/listAccounting`);
+      const response = await fetch(`${api}/listAccounting`);
       const result = await response.json();
 
       setData(result);
