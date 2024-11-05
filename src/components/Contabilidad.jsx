@@ -43,7 +43,7 @@ const ContabilidadSMAPAC = () => {
                 <th>{_item.year}</th>
                 <th>{_item.quarterly}</th>
                 <th>
-                  <a href={_item.document} className="text-cyan-600">
+                  <a href={api + _item.document} className="text-cyan-600">
                     {_item.name}
                   </a>
                 </th>
