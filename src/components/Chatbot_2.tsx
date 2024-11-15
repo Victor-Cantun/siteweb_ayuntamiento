@@ -19,6 +19,7 @@ export default function Chatbot() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [image, setImage] = useState<File | null>(null);
+  const [questionStep, setQuestionStep] = useState(0); // Added state for question flow
   const fileInputRef = useRef<HTMLInputElement>(null);
   const chatEndRef = useRef<HTMLDivElement>(null);
 
@@ -34,16 +35,34 @@ export default function Chatbot() {
         image: image ? URL.createObjectURL(image) : undefined,
       };
       setMessages([...messages, newMessage]);
-      console.log("enviar:", messages);
       setInput("");
       setImage(null);
-      // Simular respuesta del bot
+
+      // Manejar el flujo de preguntas
       setTimeout(() => {
-        const botResponse: Message = {
-          id: Date.now() + 1,
-          text: "¡Gracias por tu mensaje! Tu reporte será procesado al departamento correspondiente.",
-          sender: "bot",
-        };
+        let botResponse: Message;
+        if (questionStep === 0) {
+          botResponse = {
+            id: Date.now() + 1,
+            text: "¿Cuál es la dirección o ubicación del problema?",
+            sender: "bot",
+          };
+          setQuestionStep(1);
+        } else if (questionStep === 1) {
+          botResponse = {
+            id: Date.now() + 1,
+            text: "¿A nombre de quién levantamos el reporte?",
+            sender: "bot",
+          };
+          setQuestionStep(2);
+        } else {
+          botResponse = {
+            id: Date.now() + 1,
+            text: "Gracias por su reporte. Lo hemos registrado y será atendido a la brevedad.",
+            sender: "bot",
+          };
+          setQuestionStep(0); // Reiniciar para futuros reportes
+        }
         setMessages(prevMessages => [...prevMessages, botResponse]);
       }, 1000);
     }
@@ -57,19 +76,30 @@ export default function Chatbot() {
   };
 
   useEffect(() => {
+    if (isOpen && messages.length === 0) {
+      const initialMessage: Message = {
+        id: Date.now(),
+        text: "¿Qué servicio público deseas reportar?",
+        sender: "bot",
+      };
+      setMessages([initialMessage]);
+    }
+  }, [isOpen, messages]);
+
+  useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
   return (
-    <div className="fixed bottom-4 right-4 z-50 ">
-      <Button onClick={toggleChat} className="rounded-full w-12 h-12 shadow-lg bg-green-500" aria-label={isOpen ? "Cerrar chat" : "Abrir chat"}>
-        {isOpen ? <X className="h-6 w-6 " /> : <MessageSquare className="h-6 w-6" />}
+    <div className="fixed bottom-4 right-4 z-50">
+      <Button onClick={toggleChat} className="rounded-full w-12 h-12 shadow-lg" aria-label={isOpen ? "Cerrar chat" : "Abrir chat"}>
+        {isOpen ? <X className="h-6 w-6" /> : <MessageSquare className="h-6 w-6" />}
       </Button>
 
       {isOpen && (
         <div className="absolute bottom-16 right-0 w-80 sm:w-96 bg-background border rounded-lg shadow-xl">
           <div className="p-4 border-b">
-            <h2 className="text-lg font-semibold">Chat de reporte ciudadano</h2>
+            <h2 className="text-lg font-semibold">Chat de Soporte</h2>
           </div>
           <ScrollArea className="h-80 p-4">
             {messages.map(msg => (
