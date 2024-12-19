@@ -12,7 +12,7 @@ import ComponentGaceta from "../components/Gaceta";
     <div class="flex lg:flex-1">
       <a href="/" class="-m-1 p-1">
         <span class="sr-only">{title}</span>
-        <img class="h-[90px] w-[250px]" src="/logo-2.png" alt="" />
+        <img class="h-[90px] w-[250px]" src="/logo-2.png" alt="" id="img-logo" />
       </a>
     </div>
     <div class="flex">
@@ -25,7 +25,7 @@ import ComponentGaceta from "../components/Gaceta";
     </div>
     <div class="hidden lg:flex lg:gap-x-12">
       <a href="/" class="text_menu text-sm font-semibold leading-6 text-black">Inicio</a>
-      <a href="#Cabildo" class="text_menu text-sm font-semibold leading-6 text-black">Cabildo</a>
+      <!--<a href="#Cabildo" class="text_menu text-sm font-semibold leading-6 text-black">Cabildo</a> -->
       <a href="#Dependencias" class="text_menu text-sm font-semibold leading-6 text-black">Dependencias</a>
       <div class="relative">
         <button id="btn_transparencia" type="button" class="text_menu flex items-center gap-x-1 text-sm font-semibold leading-6 text-black" aria-expanded="false">
@@ -51,21 +51,7 @@ import ComponentGaceta from "../components/Gaceta";
           </div>
         </div>
       </div>
-      <div class="relative">
-        <button id="btn_gaceta" type="button" class="text_menu flex items-center gap-x-1 text-sm font-semibold leading-6 text-black" aria-expanded="false">
-          Gaceta
-          <svg class="h-5 w-5 flex-none text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-        <div id="menu_gaceta" class="absolute -left-8 top-full z-40 mt-3 w-screen max-w-xs overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5 hidden">
-          <div class="mx-auto max-w-lg">
-            <ComponentGaceta client:load />
-          </div>
-        </div>
-      </div>
-      <!-- <a href="/gaceta" class="text_menu text-sm font-semibold leading-6 text-black">Gaceta</a> -->
+      <a href="/gaceta" class="text_menu text-sm font-semibold leading-6 text-black">Gaceta</a>
       <a href="/blog" class="text_menu text-sm font-semibold leading-6 text-black">Blog</a>
     </div>
     <div class="hidden lg:flex lg:flex-1 lg:justify-end">

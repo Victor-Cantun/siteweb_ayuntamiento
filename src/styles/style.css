@@ -31,3 +31,8 @@
 #content {
   display: inline;
 }
+.img-white{
+  filter: brightness(0) invert(1);
+}
+
+
