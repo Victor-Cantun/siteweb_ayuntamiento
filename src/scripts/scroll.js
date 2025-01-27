@@ -21,3 +21,13 @@ window.onscroll = () => {
     });
   }
 };
+
+const scrollBar = document.getElementById('scroll');
+const viewportHeight = window.innerHeight;
+const documentHeight = document.documentElement.scrollHeight - viewportHeight;
+
+window.addEventListener('scroll', ()=>{
+  const currentPosition = window.scrollY;
+  const currentPerc = currentPosition / (documentHeight) * 100;
+  scrollBar.style.width = currentPerc + '%'
+})

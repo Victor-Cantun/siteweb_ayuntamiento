@@ -34,5 +34,9 @@
 .img-white{
   filter: brightness(0) invert(1);
 }
-
+#scroll{
+  background-color: #E99B2E;
+  height: 5px;
+  width: 0;
+}
 

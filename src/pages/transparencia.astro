@@ -1,0 +1,14 @@
+---
+const title = 'H. Ayuntamiento de Escárcega';
+import TransparenciaComponent from '../components/Transparencia';
+import Layout from '../layouts/Layout.astro'
+---
+<Layout title={title}>
+    <main class="bg-repeat" style="background-image: url(/background.jpg)">
+        <section class="bg-white pt-28  flex justify-center ">
+            <div class="my-10">
+              <TransparenciaComponent client:load></TransparenciaComponent>
+            </div>
+        </section>
+    </main>
+</Layout>

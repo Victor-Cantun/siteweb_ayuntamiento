@@ -2,12 +2,12 @@
 import "../input.css";
 import "../output.css";
 import Layout from "../layouts/Layout.astro";
-import Cabildo from "../components/Cabildo.jsx";
+
 import Dependencias from "../components/Dependencias.jsx";
-import Location from "../components/Location.astro";
+
 import Footer from "../components/Footer.astro";
 import CarouselMain from "../components/CarouselMain";
-import Chatbot from "../components/Chatbot_3.tsx";
+
 import Ayuntamiento from "@/components/Ayuntamiento.astro";
 
 const title = "H. Ayuntamiento de Escárcega";
@@ -17,10 +17,7 @@ const title = "H. Ayuntamiento de Escárcega";
   <main class="bg-slate-100 pt-[5%] bg-repeat" style="background-image: url(/background.jpg)">
     <CarouselMain client:load />
     <Ayuntamiento />
-<!--     <Cabildo client:load />-->
     <Dependencias client:load /> 
-    <!-- <Location /> -->
     <Footer />
-    <!-- <Chatbot client:load /> -->
   </main>
 </Layout>
