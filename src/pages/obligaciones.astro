@@ -1,0 +1,14 @@
+---
+const title = 'H. Ayuntamiento de Escárcega';
+import ObligationComponent from '../components/Obligaciones';
+import Layout from '../layouts/Layout.astro'
+---
+<Layout title={title}>
+    <main class="bg-repeat" style="background-image: url(/background.jpg)">
+        <section class="bg-white pt-28  flex justify-center ">
+            <div class="my-10">
+              <ObligationComponent client:load></ObligationComponent>
+            </div>
+        </section>
+    </main>
+</Layout>

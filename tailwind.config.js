@@ -1,12 +1,15 @@
+import flowbite from "flowbite-react/tailwind";
 /** @type {import('tailwindcss').Config} */
 export default {
     darkMode: ["class"],
     content: [
-    "./src/**/*.{html,js,astro}",
-    "./pages/**/*.{html,js,astro}",
-    "./components/**/*.{html,js,astro}",
+    "./src/**/*.{html,js,astro,jsx,tsx}",
+    "./pages/**/*.{html,js,astro,jsx,tsx}",
+    "./components/**/*.{html,js,astro,jsx,tsx}",
     "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
     "./node_modules/flowbite/**/*.js",
+	"./node_modules/flowbite-react/**/*.js",
+	flowbite.content(),
   ],
   theme: {
   	extend: {
@@ -64,4 +67,8 @@ export default {
   	}
   },
   plugins: [require("flowbite/plugin"), require("tailwindcss-animate")],
+  safelist: [
+    'fixed', 'top-0', 'left-0', 'right-0', 'bottom-0', 'z-50',
+    'bg-gray-500', 'bg-opacity-50', 'flex', 'items-center', 'justify-center'
+  ],
 };
