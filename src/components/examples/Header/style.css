@@ -1,0 +1,35 @@
+.header-container{
+    position: relative;
+    .header-menu{
+        position: absolute;
+        left:0px;
+        top:100px;
+        letter-spacing: 1px;
+        font-family: sans-serif;
+        color: black;
+        text-transform: uppercase;
+        font-weight: 600;
+        li{
+            margin: 10px 0;
+        }
+    }
+    #header-text{
+        opacity: 0;
+        font-size: 20vw;
+        text-transform: uppercase;
+        text-align: center;
+        font-family: serif;
+        font-weight: 600;
+        left: -100;
+    }
+}
+.lineParent{
+    overflow: hidden;
+}
+.lineChildren{
+    transform: translate(0,500px);
+    -webkit-transform: translate(0,500px);
+    -moz-transform: translate(0,500px);
+    -ms-transform: translate(0,500px);
+    -o-transform: translate(0,500px);
+}

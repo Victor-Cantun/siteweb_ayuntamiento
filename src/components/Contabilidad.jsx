@@ -1,38 +1,72 @@
 import React, { useState, useEffect } from "react";
-import ComponentGrupo from '../components/grupo.jsx';
+import SubgruposSMAPAE from "./SubgruposSMAPAE.jsx";
 import { api } from "../api/api.js";
 
 const ContabilidadSMAPAC = () => {
-  const [data, setData] = useState([]);
+  const [years, setYears] = useState([]);
+  const [yearSelect, setYearSelect] = useState(null);
+  const [categories, setListCategories] = useState([]);
+
+  const LoadYears = async() => {
+    try 
+    {
+    const response = await fetch(`${api}/listYearsSMAPAE`);
+    const result = await response.json();
+    setYears(result);
+    setYearSelect(result[0].year); 
+    //console.log(yearSelect)
+    } catch (error) 
+    {
+      console.error("Error al obtener los años disponibles:", error);
+    }
+  }
+  const LoadListCategories = async() => {
+    const response = await fetch(`${api}/listCategoriesSMAPAE`);
+    const result = await response.json();
+    setListCategories(result);
+  } 
+  
 
   useEffect(() => {
-    async function fetchData() {
-      const response = await fetch(`${api}/listAccounting`);
-      const result = await response.json();
-
-      setData(result);
-    }
-    fetchData();
+    LoadYears()
+    LoadListCategories()
   }, []);
+
+  useEffect(() => {
+    if (yearSelect) {
+     // fetchData(year);
+     console.log(yearSelect)
+    }
+  }, [yearSelect]);
+
+
 
   return (
     <>
-    <div className="w-[100%] bg-white">
-      <div className="mb-4 border-b border-gray-200 dark:border-gray-700 w-full">
-          <ul className="flex flex-wrap -mb-px text-sm font-medium text-center justify-start" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist">
-              <li className="me-2" role="presentation">
-                  <button className="inline-block p-4 border-b-2 rounded-t-lg" id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">AÑO DE EJERCICIO 2024</button>
-              </li>
-          </ul>
+    <div className="w-[100%]">
+      <div className="w-full flex justify-start flex-col">
+        <div className=" flex flex-row items-center ">
+          <label className="max-w-80 pr-3 mb-2 text-base font-medium text-gray-900 dark:text-white">AÑO DE EJERCICIO:</label>
+          <select  id="year" value={yearSelect || ""} onChange={(e) => setYearSelect(e.target.value)}  name="year"  className="max-w-32 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+              {years.map(item=>(
+                  <option key={item.year} value={item.year}>{item.year}</option>
+              ))}
+          </select>
+
+        </div>
+        <hr className="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700"></hr>
+        <p className="text-sm text-blue-500">Trimestrales / <span className="text-sm text-black">{yearSelect}</span></p>
       </div>
-      <div id="default-tab-content">
-          <div className="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800 w-full justify-start" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-              <p className="text-sm text-gray-500 dark:text-gray-400">
-                TRIMESTRALES 2024
-              </p>
-          </div>
-      </div>
-      {data.map(item=>(<ComponentGrupo key={item.id} id={item.id} grupo={item.name} subgrupos={item.subgrupos} ></ComponentGrupo>))}
+      {categories.map( (item, index) =>(
+        <div key={index} className="w-full border border-gray-200 rounded-lg shadow my-4 rounded-t-lg">
+              <h3 className="w-full px-6 py-3 bg-cherry text-white border rounded-t-lg">{item.name}</h3>
+              <div className="bg-white text-black border rounded-b-lg px-4">
+                <SubgruposSMAPAE grupo = {item.id} year={yearSelect} ></SubgruposSMAPAE>
+              </div>
+        </div>
+      ))}
+
+
     </div>
     </>
   );

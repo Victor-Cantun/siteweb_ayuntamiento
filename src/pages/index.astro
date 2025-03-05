@@ -2,22 +2,20 @@
 import "../input.css";
 import "../output.css";
 import Layout from "../layouts/Layout.astro";
-
 import Dependencias from "../components/Dependencias.jsx";
-
 import Footer from "../components/Footer.astro";
 import CarouselMain from "../components/CarouselMain";
-
 import Ayuntamiento from "@/components/Ayuntamiento.astro";
-
+/* import Example from "@/components/examples/Example"; */
 const title = "H. Ayuntamiento de Escárcega";
 ---
 
 <Layout title={title}>
-  <main class="bg-slate-100 pt-[5%] bg-repeat" style="background-image: url(/background.jpg)">
+<main class="bg-slate-100 pt-[5%] bg-repeat" style="background-image: url(/background.jpg)"> 
     <CarouselMain client:load />
     <Ayuntamiento />
     <Dependencias client:load /> 
     <Footer />
-  </main>
+</main>
+    <!-- <Example client:load></Example> -->
 </Layout>

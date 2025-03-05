@@ -1,19 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { api } from "../api/api.js";
 
- const Gaceta = () => {
-  const [data, setData] = useState([]);
-    const [years, setYears] = useState([]);
+const Gaceta = () => {
+const [data, setData] = useState([]);
+const [years, setYears] = useState([]);
   useEffect(() => {
     LoadYears()
     LoadList()
-/*     async function fetchData() {
-      const response = await fetch(`${api}/listGazette`);
-      const result = await response.json();
-
-      setData(result);
-    }
-    fetchData(); */
   }, []);
   const LoadList = async() => {
     const response = await fetch(`${api}/listGazette`);

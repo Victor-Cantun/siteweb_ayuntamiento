@@ -4,9 +4,9 @@ import Contabilidad from '../components/Contabilidad';
 import Layout from '../layouts/Layout.astro'
 ---
 <Layout title={title}>
-    <main class="bg-repeat" style="background-image: url(/background.jpg)">
-        <section class="bg-slate-100 pt-28 ml-[5%] mr-[5%] flex justify-center ">
-            <div class="my-10">
+    <main >
+        <section class="pt-20 ml-[5%] mr-[5%] flex justify-center ">
+            <div class="my-10 w-full">
                 <Contabilidad client:load></Contabilidad>
             </div>
         </section>
