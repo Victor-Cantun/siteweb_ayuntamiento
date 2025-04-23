@@ -2,6 +2,7 @@
 import "../input.css";
 import "../output.css";
 import Layout from "../layouts/Layout.astro";
+import HeroSection from "@/components/HeroSection.astro";
 import Dependencias from "../components/Dependencias.jsx";
 import Footer from "../components/Footer.astro";
 import CarouselMain from "../components/CarouselMain";
@@ -12,6 +13,7 @@ const title = "H. Ayuntamiento de Escárcega";
 
 <Layout title={title}>
 <main class="bg-slate-100 pt-[5%] bg-repeat" style="background-image: url(/background.jpg)"> 
+    <HeroSection></HeroSection>
     <CarouselMain client:load />
     <Ayuntamiento />
     <Dependencias client:load /> 
