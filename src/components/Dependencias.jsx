@@ -25,13 +25,13 @@ const Dependencias = () => {
   }, []);
   return (
     <section id="Dependencias"  className=" bg-slate-200 pt-[7%]">
-      <div className=" mx-auto flex flex-col max-w-7xl  py-[2%]">
+      <div className="mx-4 flex flex-col py-[2%]">
         <div className="w-full flex justify-center">
           <h2  className=" text-xl font-bold tracking-tight text-cherry py-3">DEPENDENCIAS</h2>
         </div>
-        <div className="w-full py-1">
+        <div className="w-full py-1 bg-pink">
 
-          <div className="w-3/4 m-auto">
+          <div className="flex justify-center ">
             <div className="container">
             {/* <h1 className="heading">DEPENDENCIAS</h1> */}
             <Swiper

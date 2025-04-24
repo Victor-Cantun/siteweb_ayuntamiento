@@ -1,5 +1,5 @@
 .container {
-    max-width: 130rem;
+    max-width: 72rem;
     padding: 1rem 1rem;
     margin: 0 auto;
     /* background-color: yellowgreen; */
@@ -12,25 +12,12 @@
 }
 .swiper-slide {
     width: 22rem;
-    height: 30rem;
+    height: 22rem;
     position: relative;
     display: flex;
     justify-content: center;
 }
-@media (max-width: 500px) {
-.swiper_container {
-    height: 30rem;
-}
-.swiper-slide {
-    width: 26rem !important;
-    height: 30rem !important;
-}
-.swiper-slide .myCard {
-    width: 20rem !important;
-    height: 20rem !important;
-    border-radius: 2rem;
-}
-}
+
 .swiper-slide .myCard {
     width: 20rem;
     height: 20rem;
@@ -98,3 +85,24 @@
     background-color: blue;
 }
 
+@media (max-width: 500px) {
+    .container{
+        max-width: 18rem;
+    }    
+    .swiper_container {
+        height: 20rem;
+    }
+    .swiper-slide {
+        width: 20rem !important;
+        height: 22rem !important;
+    }
+    .swiper-slide .myCard {
+        width: 20rem !important;
+        height: 20rem !important;
+        border-radius: 2rem;
+        /* background-color: chartreuse; */
+    }
+    .slider-controler{
+        margin-top: 4rem;
+    }
+}
