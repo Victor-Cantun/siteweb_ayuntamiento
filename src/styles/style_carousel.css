@@ -42,3 +42,23 @@
   display: flex;
   align-items: center;
 }
+
+
+/* .semicircle {
+  position: relative;
+  background: #861F3C;
+  height: 50vh; 
+} */
+
+/* .semicircle::before {
+  position: absolute;
+  content: '';
+  left: 50%;
+  z-index: 10;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: inherit;
+  transform: translateX(-50%) translateY(50%);
+  bottom: 0px;
+} */

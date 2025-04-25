@@ -24,7 +24,7 @@ const Dependencias = () => {
     fetchData();
   }, []);
   return (
-    <section id="Dependencias"  className=" bg-slate-200 pt-[7%]">
+    <section id="Dependencias"  className="h-dvh bg-slate-300 pt-[7%]">
       <div className="mx-4 flex flex-col py-[2%]">
         <div className="w-full flex justify-center">
           <h2  className=" text-xl font-bold tracking-tight text-cherry py-3">DEPENDENCIAS</h2>
@@ -58,13 +58,19 @@ const Dependencias = () => {
             {data.map((item,index)=>(
               <>
               <SwiperSlide>
-                <div key={index} className="bg-white text-black rounded-xl myCard border border-gray-200 shadow-sm">
-                  <div className="h-44 bg-cherry flex justify-center items-center rounded-t-xl">
-                    {item.director_detail != null ? (<img src={api + item.director_detail.profile_image} className="rounded-full w-40 h-40" />) : (<i></i>)}
+                <div key={index}  class="flex flex-col bg-cherry shadow-sm border border-slate-200 rounded-lg my-6 w-64">
+                  <div class="mx-2.5 my-2 overflow-hidden rounded-md h-80 flex justify-center items-center">
+{/*                     <img class="w-full h-full object-cover" src="https://docs.material-tailwind.com/img/team-3.jpg" alt="profile-picture" /> */}
+                    {item.director_detail != null ? (<img src={api + item.director_detail.profile_image} className="w-full h-full object-cover" alt="profile-picture" />) : (<i></i>)}
                   </div>
-                  <div className="flex flex-col items-center justify-center gap-4 p-4">
-                    <p className="text-center text-sm font-light text-stone-800">{item.director_name}</p>
-                    <p className="text-center text-sm font-medium text-red-800">{item.name}</p>
+                  <div class="px-6 py-2 text-center">
+                    <h4 class="mb-2 text-sm font-semibold text-white">
+                    {item.director_name}
+                    </h4>
+                    <p
+                      class="text-xs mb-2 font-semibold text-slate-300 uppercase">
+                      {item.name} 
+                    </p>
                   </div>
                 </div>
               </SwiperSlide>

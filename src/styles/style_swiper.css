@@ -1,8 +1,10 @@
 .container {
-    max-width: 72rem;
+    max-width: 80rem;
     padding: 1rem 1rem;
     margin: 0 auto;
     /* background-color: yellowgreen; */
+    /* max-width: 18rem; */
+    max-height: 30rem;
 }
 .swiper_container {
     height: 30rem;
@@ -88,16 +90,17 @@
 @media (max-width: 500px) {
     .container{
         max-width: 18rem;
+        max-height: 30rem;
     }    
     .swiper_container {
-        height: 20rem;
+        height: 25rem;
     }
     .swiper-slide {
-        width: 20rem !important;
+        width: 15rem !important;
         height: 22rem !important;
     }
     .swiper-slide .myCard {
-        width: 20rem !important;
+        width: 15rem !important;
         height: 20rem !important;
         border-radius: 2rem;
         /* background-color: chartreuse; */

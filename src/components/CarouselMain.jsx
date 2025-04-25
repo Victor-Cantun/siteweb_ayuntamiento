@@ -20,15 +20,24 @@ const CarouselMain = () => {
 
 
   return (
-    <div className="">
-      <div className="h-dvh sm:h-dvh xl:h-dvh 2xl:h-dvh bg-cherry">
-        <Carousel slideInterval={5000}>
-          {data.map((item,index)=>(
-            <img src={api+item.image} alt={index} />
-          ))}
-        </Carousel>
+    <>
+      <div className="relative h-screen">
+        <div className="absolute inset-x-0 top-0 h-1/2 bg-white"></div>
+        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-cherry">
+          <div className="grid h-full place-items-center">
+
+          </div>
+        </div>
+        <div className="absolute inset-0 flex items-center justify-center">
+            <Carousel slideInterval={5000} className="h-96 w-[90%] z-20">
+              {data.map((item,index)=>(
+                <img key={index} src={api+item.image} alt={index} />
+              ))}
+            </Carousel>
+        </div>
       </div>
-    </div>
+    </>
+
   );
 };
 export default CarouselMain;

@@ -1,32 +1,32 @@
-<div class="h-sdvh w-screen relative">
-    
-        <div class="bg-gradient-to-t from-cherry via-red-700 to-red-600 border rounded-lg h-full w-screen">
-            <section class="py-2 sm:py-10 lg:py-2 ">
-                <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 ">
-                    <div class="grid  grid-cols-1 gap-0 lg:gap-12 lg:grid-cols-2 ">
-                        <div class="flex-row">
-                            <div class=" text-4xl font-bold text-black lg:mt-4 sm:text-6xl xl:text-8xl ">
-                                <img class="w-full mt-20 heart" src="/white_slogan.png" alt="" />
-                            </div>                        
-                            <!--<h1 class="mt-4 text-4xl font-bold text-black lg:mt-8 sm:text-6xl xl:text-8xl">Connect & learn from the experts</h1>-->                     
-                            <div class="mt-10 hidden sm:inline-flex sm:items-center">
-                                <a href="http://declaranet.escarcega.gob.mx:5000" title="" class="hidden sm:inline-flex sm:items-center px-6 py-4 mt-8 font-semibold text-black transition-all duration-200 bg-yellow-300 rounded-full lg:mt-16 hover:bg-yellow-400 focus:bg-yellow-400" role="button">
-                                    Declaranet
-                                </a>  
-                            </div>
-                        </div>
-                        <div class=" flex">
-                            <div class="w-1/4 mt-[6%] flex-none items-end sm:invisible   md:invisible">
-                                <a href="http://declaranet.escarcega.gob.mx:5000" title="" class="inline-flex items-center px-6 py-4 mt-20 font-semibold text-black transition-all duration-200 bg-yellow-300 rounded-full lg:mt-16 hover:bg-yellow-400 focus:bg-yellow-400" role="button">
-                                    Declaranet
-                                </a>                               
-                            </div>
-                            <img class="w-3/4 -mr-10 flex-1 sm:w-full sm:h-full" src="/JuanRath.jpg" alt="" />
-                        </div>
-                    </div>
-                </div>
-            </section>
+<div class="h-screen w-screen flex items-end ">
+    <div class="h-full pt-[30%] sm:pt-[8%]   w-screen">
+        <div class="grid grid-cols-3 gap-2 bg-cherry pt-5 px-6 min-h-96 h-full w-full">
+            <div class=" h-full col-span-3 max-h-48 px-10 sm:px-30">
+                <img class="min-w-56  h-full heart slogan opacity-0" src="/white_slogan.png" alt="" />
+            </div>
+            <div class="col-start-1 max-h-80 flex justify-center items-center">
+                <button class="cursor-pointer boton-declaranet opacity-0 w-40 bg-yellow-300 hover:bg-yellow-400 text-white font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded-full">
+                    <label class="text-black font-bold text-sm sm:text-2xl">Declara<span class="text-red-800">Net</span></label>
+                </button>
+            </div>
+            <div class="col-span-2 max-h-80 relative ">
+                <img class="w-full h-full sm:h-[550px] sm:w-[600px] sm:absolute sm:bottom-0 sm:right-0 presidente opacity-0 -translate-x-10" src="/JuanRath.jpg" alt="" />
+            </div>
         </div>
-        <!-- <div class="absolute bg-white h-[300px] w-full bottom-0 left-0"></div> -->
-    
+    </div>
 </div>
+<script>
+import gsap from 'gsap';
+
+document.addEventListener('DOMContentLoaded', () => {
+
+var tl = gsap.timeline({opacity: 0.5});
+tl.to(".presidente", {duration: 2, opacity:1, ease: 'expo.out', x:0}, "+=0.5")
+  .to(".slogan", {duration: 1, opacity: 1})
+  .to(".boton-declaranet", {duration: 1, opacity:1, ease: 'elastic.out'}, "+=0.5")
+  ;
+});
+
+
+
+</script>
