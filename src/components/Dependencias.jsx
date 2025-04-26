@@ -27,7 +27,7 @@ const Dependencias = () => {
     <section id="Dependencias"  className="h-dvh bg-slate-300 pt-[7%]">
       <div className="mx-4 flex flex-col py-[2%]">
         <div className="w-full flex justify-center">
-          <h2  className=" text-xl font-bold tracking-tight text-cherry py-3">DEPENDENCIAS</h2>
+          <h2  className=" text-xl font-bold tracking-tight text-cherry py-3">DIRECCIONES</h2>
         </div>
         <div className="w-full py-1 bg-pink">
 

@@ -1,131 +1,68 @@
 ---
 const title = "H. Ayuntamiento de Escárcega";
 ---
-
-<header class="bg-white  w-full fixed z-50 my-header opacity-0 translate-y-200" id="header">
-  <nav class="mx-auto flex max-w-7xl items-center justify-between p-2 lg:px-8" aria-label="Global">
-    <div class="flex lg:flex-1">
-      <a href="/" class="-m-1 p-1">
-        <span class="sr-only">{title}</span>
-        <img class="h-[90px] w-[250px]" src="/logo-2.png" alt="" id="img-logo" />
-      </a>
-    </div>
-    <div class="flex">
-      <button id="open_menu" type="button" class="text_menu -m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-black lg:hidden">
-        <span class="sr-only">Abrir menu</span>
-        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+<nav class="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 my-header  opacity-0 translate-y-200">
+  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+        <!-- <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" /> -->
+        <img class="h-[90px] w-[250px]" src="/logo-2.png" alt="H. Ayuntamiento de Escárcega" id="img-logo" />
+        <!-- <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">{title}</span> -->
+    </a>
+    <button data-collapse-toggle="navbar-dropdown" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-dropdown" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
         </svg>
-      </button>
-    </div>
-    <div class="hidden lg:flex lg:gap-x-12">
-      <a href="/" class="text_menu text-sm font-semibold leading-6 text-black">Inicio</a>
-      <!--<a href="#Cabildo" class="text_menu text-sm font-semibold leading-6 text-black">Cabildo</a> -->
-      <a href="/#Dependencias" class="text_menu text-sm font-semibold leading-6 text-black">Dependencias</a>
-      <div class="relative">
-        <button id="btn_transparencia" type="button" class="text_menu flex items-center gap-x-1 text-sm font-semibold leading-6 text-black" aria-expanded="false">
-          Transparencia
-          <svg class="h-5 w-5 flex-none text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-        <div id="menu_transparencia" class="absolute -left-8 top-full z-40 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5 hidden">
-          <div class="mx-auto max-w-lg">
-            <ul class="divide-y divide-gray-200 rounded-xl border border-gray-200 shadow-sm">
-              <li class="p-2 hover:bg-gray-50 cursor-pointer">
-                <p class="text-lg font-medium leading-loose pl-4"><a href="https://transparencia.escarcega.gob.mx/contabilidad/">Contabilidad Gubernamental</a></p>
-              </li>
-              <li class="p-2 hover:bg-gray-50 cursor-pointer">
-                <p class="text-lg font-medium leading-loose pl-4"><a href="https://smdif.escarcega.gob.mx/contabilidad/">Contabilidad SMDIF</a></p>
-              </li>
-              <li class="p-2 hover:bg-gray-50 cursor-pointer">
-                <p class="text-lg font-medium leading-loose pl-4"><a href="/smapae">Contabilidad SMAPAE</a></p>
-              </li>
-              <li class="p-2 hover:bg-gray-50 cursor-pointer">
-                <p class="text-lg font-medium leading-loose pl-4"><a href="/transparencia">Transparencia</a></p>
-              </li>
-<!--               <li class="p-2 hover:bg-gray-50 cursor-pointer">
-                <p class="text-lg font-medium leading-loose pl-4"><a href="/obligaciones">Obligaciones comunes</a></p>
-              </li> -->
-            </ul>
-          </div>
-        </div>
-      </div>
-      <a href="/gaceta" class="text_menu text-sm font-semibold leading-6 text-black">Gaceta</a>
-      <!-- <a href="/blog" class="text_menu text-sm font-semibold leading-6 text-black">Blog</a> -->
-    </div>
-    <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-      <!-- <a href="#" class="text_menu text-sm font-semibold leading-6 text-black">Iniciar sesión <span aria-hidden="true">&rarr;</span></a> -->
-    </div>
-  </nav>
-  <!-- Mobile menu, show/hide based on menu open state. -->
-  <div id="movil_menu" class="lg:hidden md:hidden hidden" role="dialog" aria-modal="true">
-    <!-- Background backdrop, show/hide based on slide-over state. -->
-    <div class="fixed inset-0 z-10"></div>
-    <div class="z-40 fixed inset-y-0 right-0 w-full overflow-y-auto px-6 py-6 sm:max-w-sm bg-cherry border-b-8 border-golden">
-      <div class="flex items-center justify-between">
-        <a href="#" class="-m-1.5 p-1.5">
-          <span class="sr-only">{title}</span>
-          <img class="h-8 w-auto" src="/logo-1.png" alt="" />
-        </a>
-        <button id="close_menu" type="button" class="-m-2.5 rounded-md p-2.5 text-white">
-          <span class="sr-only">Cerrar menu</span>
-          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
-          </svg>
-        </button>
-      </div>
-      <div class="mt-6 flow-root sm:hidden">
-        <div class="-my-6 divide-y divide-gray-500/10">
-          <div class="space-y-2 py-6">
-            <a href="/" id="btn-movil_inicio" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">Inicio</a>
-            <!-- <a href="#" id="btn-movil_cabildo" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">Cabildo</a> -->
-            <a href="/#Dependencias" id="btn-movil_dependencias" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">Dependencias</a>
-            <div class="-mx-3">
-              <button
-                id="btn-movil_transparencia"
-                type="button"
-                class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black"
-                aria-controls="disclosure-1"
-                aria-expanded="false"
-              >
-                Transparencia
-                <svg class="h-5 w-5 flex-none" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"
-                  ></path>
-                </svg>
-              </button>
-              <div class="mt-2 space-y-2 hidden" id="menu-movil_transparencia">
-                <a href="https://transparencia.escarcega.gob.mx/contabilidad/" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black"
-                  >Contabilidad Gubernamental</a
-                >
-                <a href="https://smdif.escarcega.gob.mx/contabilidad/" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black"
-                  >Contabilidad SMDIF</a
-                >
-                <a href="/smapae" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">Contabilidad SMAPAE</a>
-                <a href="/transparencia" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">Transparencia</a>
-                <!-- <a href="/obligaciones" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">Obligaciones comunes</a> -->
-              </div>
+    </button>
+    <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
+      <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+        <li>
+          <a href="/" class="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent" aria-current="page">Inicio</a>
+        </li>
+        <li>
+          <a href="/#Dependencias" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Direcciones</a>
+        </li>        
+        <li>
+            <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">
+              Transparencia
+              <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+              </svg>
+            </button>
+            <!-- Dropdown menu -->
+            <div id="dropdownNavbar" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700 dark:divide-gray-600">
+                <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                  <li>
+                    <a href="https://transparencia.escarcega.gob.mx/contabilidad/" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Contabilidad Gubernamental</a>
+                  </li>
+                  <li>
+                    <a href="https://smdif.escarcega.gob.mx/contabilidad/" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Contabilidad SMDIF</a>
+                  </li>
+                  <li>
+                    <a href="/smapae" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Contabilidad SMAPAE</a>
+                  </li>
+                  <li>
+                    <a href="/transparencia" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Transparencia</a>
+                  </li>
+                </ul>
+<!--                 <div class="py-1">
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
+                </div> -->
             </div>
-            <a href="/gaceta" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">Gaceta</a>
-            <!-- <a href="/blog" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black">Blog</a> -->
-          </div>
-          <div class="py-6"></div>
-        </div>
-      </div>
+        </li>
+        <li>
+          <a href="/gaceta" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Gaceta</a>
+        </li>
+<!--         <li>
+          <a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
+        </li> -->
+      </ul>
     </div>
   </div>
-  <div id="scroll"></div>
-</header>
-
-<script>
-  import "../scripts/scroll.js";
-  import "../scripts/open_menu.js";
-</script>
+</nav>
 <script>
   import gsap from 'gsap';
   document.addEventListener('DOMContentLoaded', () => {
     gsap.to(".my-header", {  y:0, duration: 3, opacity:1 });
   });
-  </script>
+</script>
