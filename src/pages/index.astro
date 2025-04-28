@@ -3,21 +3,18 @@ import "../input.css";
 import "../output.css";
 import Layout from "../layouts/Layout.astro";
 import HeroSection from "@/components/HeroSection.astro";
-import Dependencias from "../components/Dependencias.jsx";
-import Footer from "../components/Footer.astro";
 import CarouselMain from "../components/CarouselMain";
 import Ayuntamiento from "@/components/Ayuntamiento.astro";
-/* import Example from "@/components/examples/Example"; */
+import Dependencias from "../components/Dependencias.jsx";
+import Footer from "../components/Footer.astro";
 const title = "H. Ayuntamiento de Escárcega";
 ---
-
 <Layout title={title}>
-<main class="w-dvh"> 
-    <HeroSection></HeroSection>
-    <CarouselMain client:load /> 
-    <Ayuntamiento />
-    <Dependencias client:load /> 
-    <Footer />
-</main>
-    <!-- <Example client:load></Example> -->
+    <main> 
+        <HeroSection></HeroSection>
+        <CarouselMain client:load />
+        <Ayuntamiento />
+        <Dependencias client:load /> 
+        <Footer />
+    </main>
 </Layout>

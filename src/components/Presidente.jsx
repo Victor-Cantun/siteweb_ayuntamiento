@@ -3,7 +3,7 @@ import React from 'react'
 const Presidente = () => {
   return (
     <>
-        <div className="flex flex-col items-center justify-center w-full p-4 bg-white border border-gray-200 rounded-lg shadow">
+        <div className="flex flex-col items-center justify-center w-full h-full p-4 bg-white border border-gray-200 rounded-lg shadow">
             <img className="w-32 h-32 p-2 rounded-full ring-2 ring-gray-300 dark:ring-gray-500" src="/presidente.jpg" alt="Bordered avatar" />
             <p className="p-1 mt-1 text-base leading-3 text-gray-600">Lic. Juan Carlos Hernández Rath</p>
             <p className="p-1 text-lg font-bold tracking-tight text-cherry sm:text-lg">PRESIDENTE MUNICIPAL</p>

@@ -24,14 +24,13 @@ const Dependencias = () => {
     fetchData();
   }, []);
   return (
-    <section id="Dependencias"  className="h-dvh bg-slate-300 pt-[7%]">
-      <div className="mx-4 flex flex-col py-[2%]">
+    <section id="Dependencias"  className="mt-[40%] sm:mt-0 sm:h-dvh bg-gradient-to-t from-slate-400 to-slate-50 pt-[7%]">
+      <div className="mx-4 flex flex-col py-[2%] h-full">
         <div className="w-full flex justify-center">
           <h2  className=" text-xl font-bold tracking-tight text-cherry py-3">DIRECCIONES</h2>
         </div>
         <div className="w-full py-1 bg-pink">
-
-          <div className="flex justify-center ">
+          <div className="flex justify-center items-center">
             <div className="container">
             {/* <h1 className="heading">DEPENDENCIAS</h1> */}
             <Swiper
@@ -60,7 +59,6 @@ const Dependencias = () => {
               <SwiperSlide>
                 <div key={index}  class="flex flex-col bg-cherry shadow-sm border border-slate-200 rounded-lg my-6 w-64">
                   <div class="mx-2.5 my-2 overflow-hidden rounded-md h-80 flex justify-center items-center">
-{/*                     <img class="w-full h-full object-cover" src="https://docs.material-tailwind.com/img/team-3.jpg" alt="profile-picture" /> */}
                     {item.director_detail != null ? (<img src={api + item.director_detail.profile_image} className="w-full h-full object-cover" alt="profile-picture" />) : (<i></i>)}
                   </div>
                   <div class="px-6 py-2 text-center">
@@ -86,7 +84,6 @@ const Dependencias = () => {
             </Swiper>              
             </div>
           </div>
-
         </div>
       </div>
     </section>
