@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { api } from "../api/api.js";
-import { Accordion } from "flowbite-react";
+import { Accordion, AccordionPanel, AccordionTitle } from "flowbite-react";
 import DependencesComponent from '../components/Dependences.jsx'
 const TransparenciaComponent = () => {
   const [data, setData] = useState([]);
@@ -27,7 +27,11 @@ const TransparenciaComponent = () => {
         </Accordion.Panel>
         ))}
       </Accordion>
+
+
+
     </>
+
   );
 };
 export default TransparenciaComponent;

@@ -5,10 +5,20 @@ import Layout from '../layouts/Layout.astro'
 ---
 <Layout title={title}>
     <main class="bg-repeat" style="background-image: url(/background.jpg)">
-        <section class="bg-white pt-28  flex justify-center ">
-            <div class="my-10">
-              <TransparenciaComponent client:load></TransparenciaComponent>
+        <section class="bg-white pt-10 flex flex-wrap justify-center">
+            <div class="my-10 w-full  mx-[20%]  ">
+                <TransparenciaComponent client:load></TransparenciaComponent>
+            </div>
+            <hr>
+            <div class="my-2 w-full flex flex-col justify-center items-center mx-[20%]">
+                <div class="flex flex-auto w-full border border-b-2">
+                    <a target="_blank" href="codigo_etica.pdf" class="bg-cherry text-white hover:bg-red-900 px-4 py-6 w-full">Código de ética</a>
+                </div>
+                <div class="flex flex-auto w-full">
+                    <a target="_blank" href="codigo_conducta.pdf" class="bg-cherry text-white hover:bg-red-900 px-4 py-6 w-full">Código de conducta</a>
+                </div>
             </div>
         </section>
+
     </main>
 </Layout>
