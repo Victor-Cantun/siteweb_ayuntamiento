@@ -7,11 +7,13 @@ import CarouselMain from "../components/CarouselMain";
 import Ayuntamiento from "@/components/Ayuntamiento.astro";
 import Dependencias from "../components/Dependencias.jsx";
 import Footer from "../components/Footer.astro";
+import Policia from "@/components/Policia.astro";
 const title = "H. Ayuntamiento de Escárcega";
 ---
 <Layout title={title}>
     <main> 
         <HeroSection></HeroSection>
+        <!-- <Policia></Policia> -->
         <CarouselMain client:load />
         <Ayuntamiento />
         <Dependencias client:load /> 
