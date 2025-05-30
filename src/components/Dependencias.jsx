@@ -59,7 +59,7 @@ const Dependencias = () => {
               <SwiperSlide>
                 <div key={index}  class="flex flex-col bg-cherry shadow-sm border border-slate-200 rounded-lg my-6 w-64">
                   <div class="mx-2.5 my-2 overflow-hidden rounded-md h-80 flex justify-center items-center">
-                    {item.director_detail != null ? (<img src={api + item.director_detail.profile_image} className="w-full h-full object-cover" alt="profile-picture" />) : (<i></i>)}
+                    {item.director_detail != null ? (<img src={api + item.director_detail.profile_image} className="w-full h-full object-cover" />) : (<i></i>)}
                   </div>
                   <div class="px-6 py-2 text-center">
                     <h4 class="mb-2 text-sm font-semibold text-white">

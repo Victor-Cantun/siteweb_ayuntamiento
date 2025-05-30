@@ -57,6 +57,8 @@
   -webkit-animation: heartbeat 2s infinite;
 }
 
-
+.content{
+  background: radial-gradient(circle at 50% 50%, #861f3c, #751a36, #641630, #541229, #440e22, #350a1b);
+}
 
 

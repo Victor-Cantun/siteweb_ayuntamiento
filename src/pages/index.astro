@@ -11,12 +11,27 @@ import Policia from "@/components/Policia.astro";
 const title = "H. Ayuntamiento de Escárcega";
 ---
 <Layout title={title}>
-    <main> 
+    <main>
+<!--         <div class="h-dvh w-dvw content relative -z-[100]" >
+            <div class="splash w-full h-full absolute top-0 left-0 opacity-1 bg-white flex justify-center items-center">
+                <img src="/logo-1.png" class="min-w-72 max-w-96 min-h-52 max-h-80" />
+            </div>
+            <div class="w-full h-full bg-origin-border bg-no-repeat bg-top bg-cover bg-[url(/palacio_municipal_escarcega.webp)] opacity-5" >
+            </div>
+        </div>  -->
         <HeroSection></HeroSection>
-        <!-- <Policia></Policia> -->
+        <Policia></Policia>
         <CarouselMain client:load />
         <Ayuntamiento />
         <Dependencias client:load /> 
         <Footer />
     </main>
 </Layout>
+<script>
+    import gsap from 'gsap';
+    document.addEventListener('DOMContentLoaded', () => {
+        var tl = gsap.timeline();
+        tl.to(".splash", {duration: 3, opacity: 0,})
+        ;
+    });
+</script>
