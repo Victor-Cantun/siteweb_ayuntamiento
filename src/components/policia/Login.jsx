@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
 
+import { Navbar, NavbarBrand, NavbarCollapse, NavbarLink, NavbarToggle } from "flowbite-react";
+
+
 const Login = () => {
   const [formData, setFormData] = useState({
     email: '',
@@ -37,12 +40,28 @@ const Login = () => {
   };
 
   return (
+    
+  <>
+    <Navbar fluid rounded className='w-full absolute t-0 left-0 right-0'>
+      <NavbarBrand as={Link} href="/">
+        <img src="/logo-2.png" className="mr-3 h-6 sm:h-9" alt="H. Ayuntamiento de Escárcega" />
+      </NavbarBrand>
+      <NavbarToggle />
+      <NavbarCollapse>
+        <NavbarLink href="/" active>
+          Inicio
+        </NavbarLink>
+        <Link to="/login">Iniciar sesión</Link>
+        <Link to="/register">Registrarse</Link>
+      </NavbarCollapse>
+    </Navbar>
+
     <div className="bg-gray-100 flex items-center justify-center min-h-screen p-4">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
         <div>
-{/*           <figure className="sm:mx-auto sm:w-full sm:max-w-sm ">
+          <figure className="sm:mx-auto sm:w-full sm:max-w-sm ">
             <a href="/"><img alt="H.Ayuntamiento de Escárcega" src="/logo-2.png" className="mx-auto h-32 w-auto" /></a>
-          </figure> */}
+          </figure>
           <h2 className="mt-4 text-center text-2xl font-bold text-gray-900">
             Iniciar Sesión
           </h2>
@@ -105,6 +124,7 @@ const Login = () => {
         </form>
       </div>
     </div>
+  </>
   );
 };
 

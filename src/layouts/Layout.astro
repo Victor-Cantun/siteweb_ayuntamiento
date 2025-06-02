@@ -3,6 +3,7 @@ import '../input.css'
 import '../output.css'
 import '../styles/style.css'
 import Header from './../components/Header.astro'
+import Footer from "../components/Footer.astro";
 interface Props {
 	title: string;
 }
@@ -12,7 +13,7 @@ const { title } = Astro.props;
 <html lang="es">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content="H. Ayuntamiento de Escárcega" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
@@ -20,8 +21,9 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<div id="content">
-			<Header></Header>
+			<Header/>
 			<slot />
+			<Footer />
 		</div>
 		<script  src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>		
 	</body>

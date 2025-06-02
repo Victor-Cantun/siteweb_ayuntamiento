@@ -1,13 +1,13 @@
 ---
 const title = "H. Ayuntamiento de Escárcega";
 import ComponentGaceta from "../components/Gaceta.jsx";
-import Layout from "../layouts/Layout.astro";
+import Layout from "../layouts/Layout_white.astro";
 ---
 
 <Layout title={title}>
-  <main class="bg-repeat" style="background-image: url(/background.jpg)">
-    <section class="bg-slate-100 pt-28 w-full flex justify-center">
-      <div class="my-10 m-3/5">
+  <main  class="w-screen h-[100%] content ">
+    <section class="w-full h-dvh bg-slate-100 overflow-y-auto">
+      <div class="max-w-sm md:max-w-max m-auto py-10">
         <ComponentGaceta client:load />
       </div>
     </section>

@@ -1,21 +1,30 @@
 ---
 const title = 'H. Ayuntamiento de Escárcega';
 import TransparenciaComponent from '../components/Transparencia';
-import Layout from '../layouts/Layout.astro'
+import Layout from '../layouts/Layout_white.astro'
 ---
 <Layout title={title}>
-    <main class="bg-repeat" style="background-image: url(/background.jpg)">
-        <section class="bg-white pt-10 flex flex-wrap justify-center">
-            <div class="my-10 w-full  mx-[20%]  ">
+    <main class="w-screen content ">
+        <section class="w-full h-dvh bg-slate-100 overflow-y-auto">
+            <div class="max-w-sm md:max-w-max m-auto py-10">
+                <h2 class="mb-4 text-2xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white uppercase">Transparencia</h2>
                 <TransparenciaComponent client:load></TransparenciaComponent>
             </div>
-            <hr>
-            <div class="my-2 w-full flex flex-col justify-center items-center mx-[20%]">
-                <div class="flex flex-auto w-full border border-b-2">
-                    <a target="_blank" href="/codigo_etica" class="bg-cherry text-white hover:bg-red-900 px-4 py-6 w-full">Código de ética</a>
-                </div>
-                <div class="flex flex-auto w-full">
-                    <a target="_blank" href="/codigo_conducta" class="bg-cherry text-white hover:bg-red-900 px-4 py-6 w-full">Código de conducta</a>
+
+            <div class="flex justify-center items-center p-5">
+                <div class="max-w-sm md:max-w-md lg:mx-w-lg m-auto w-full h-52">
+                    <ul class="list-none">
+                        <li class=" bg-cherry w-full hover:bg-red-900 border border-e-white flex">
+                            <a target="_blank" href="/codigo_etica" class="cursor-pointer p-6 grow">
+                                <span class="text-white">Código de ética</span>
+                            </a>
+                        </li>
+                        <li class=" bg-cherry w-full hover:bg-red-900 border border-e-white flex">
+                            <a target="_blank" href="/codigo_conducta" class="cursor-pointer p-6 grow" >
+                                <span class="text-white">Código de conducta</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>

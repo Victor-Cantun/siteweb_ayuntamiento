@@ -1,11 +1,11 @@
 ---
 const title = 'H. Ayuntamiento de Escárcega';
 import Contabilidad from '../components/Contabilidad';
-import Layout from '../layouts/Layout.astro'
+import Layout from '../layouts/Layout_white.astro'
 ---
 <Layout title={title}>
     <main >
-        <section class="pt-20 ml-[5%] mr-[5%] flex justify-center ">
+        <section class="pt-5 ml-[5%] mr-[5%] flex justify-center bg-slate-100">
             <div class="my-10 w-full">
                 <Contabilidad client:load></Contabilidad>
             </div>

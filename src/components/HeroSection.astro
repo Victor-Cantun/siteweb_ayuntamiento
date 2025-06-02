@@ -1,30 +1,42 @@
-<div class="w-full h-screen items-end -z-[100] static ">
-    
-        <div class="grid grid-cols-3 gap-2 bg-cherry pt-5 px-6 min-h-96 h-full -z-[100]">
+<div class="w-dvw h-dvh -z-[100] static">
+
+    <div class="h-full w-full content -z-[100]"  >
+        <!--splash-->
+        <div class="splash w-full h-full absolute top-0 left-0 opacity-1 bg-white flex justify-center items-center">
+            <img src="/logo-1.png" class="min-w-72 max-w-96 min-h-52 max-h-80" />
+        </div>
+        <!--splash-->
+        <div class="w-full h-full bg-origin-border bg-no-repeat bg-top bg-cover opacity-5 -z-[101]" style="background-image: url('/palacio_municipal_escarcega.webp')" >
+        </div>
+    </div>  
+    <div class="absolute top-0 left-0 right-0 w-full h-full ">
+        <div class="grid grid-cols-3 gap-2  pt-5 px-6 min-h-96 h-full ">
             <div class=" h-full col-span-3 max-h-48 px-10 sm:px-30 place-self-center static z-10 left-0 right-0">
-                <img class="min-w-56  h-full heart slogan opacity-0" src="/white_slogan.png" alt="" />
+                <img class="slogan opacity-0 min-w-56  h-full heart" src="/white_slogan.png" alt="Lo hacemos con el corazón" />
             </div>
-            <div class="col-start-1 max-h-80 flex justify-center items-start  ">
-                <a href="http://declaranet.escarcega.gob.mx:5000/" class="cursor-pointer boton-declaranet opacity-0 w-40 bg-yellow-300 hover:bg-yellow-400 text-white font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded-full">
-                    <label class="text-black font-bold text-sm sm:text-2xl">Declara<span class="text-red-800">Net</span></label>
+            <div class="col-start-1 max-h-80 flex justify-center items-center">
+                <a href="http://declaranet.escarcega.gob.mx:5000/" class="boton-declaranet opacity-0 translate-y-20 cursor-pointer w-40 bg-yellow-300 hover:bg-yellow-200 text-white font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded-full">
+                    <label class="cursor-pointer text-black font-bold text-sm sm:text-2xl">Declara<span class="cursor-pointer text-red-800">Net</span></label>
                 </a>
             </div>
-            <div class="col-span-2 max-h-80 z-0 relative ">
-                <div class="absolute bottom-0 right-0 rounded-full bg-[#6F142F] -z-[101] w-full h-full sm:h-[300px] sm:w-[300px] md:h-[400px] md:w-[400px] lg:h-[500px] lg:w-[500px] bg-origin-padding p-4  " >
-                    <div class="absolute bottom-0 right-0 rounded-full w-full h-full sm:h-[300px] sm:w-[300px] md:h-[400px] md:w-[400px] lg:h-[500px] lg:w-[500px] bg-origin-padding p-4  bg-no-repeat bg-center bg-cover presidente opacity-0 translate-x-10" style="background-image: url('/JuanRath.jpg')">
+            <div class="col-span-2 max-h-80 z-0 relative">
+                <div class="presidente opacity-0 translate-x-10 absolute bottom-0 right-0 rounded-full bg-[#6F142F] -z-[101] w-full h-full sm:h-[300px] sm:w-[300px] md:h-[400px] md:w-[400px] lg:h-[500px] lg:w-[500px] bg-origin-padding p-4  " >
+                    <div class="absolute bottom-0 right-0 rounded-full w-full h-full sm:h-[300px] sm:w-[300px] md:h-[400px] md:w-[400px] lg:h-[500px] lg:w-[500px] bg-origin-padding p-4  bg-no-repeat bg-center bg-cover " style="background-image: url('/JuanRath.jpg')">
                     </div>
                 </div>
             </div>
         </div>
-    
+    </div>
+
 </div>
+
 <script>
 import gsap from 'gsap';
 document.addEventListener('DOMContentLoaded', () => {
-var tl = gsap.timeline({opacity: 0.5});
-tl.to(".presidente", {duration: 2, opacity:1, ease: 'expo.out', x:0}, "+=0.5")
-  .to(".slogan", {duration: 1, opacity: 1})
-  .to(".boton-declaranet", {duration: 1, opacity:1, ease: 'elastic.out'}, "+=0.5")
-  ;
+    var tl = gsap.timeline();
+    tl.to(".splash", {duration: 1, opacity: 0, display:"none"})
+    .to(".presidente", {duration: 1, opacity:1, ease: 'expo.out', x:0}, "+=0.5")
+    .to(".slogan", {duration: 1, opacity: 1},"+=0.5")
+    .to(".boton-declaranet", {duration: 1, opacity:1, ease: 'elastic.out', y:0}, "+=0.5");
 });
 </script>

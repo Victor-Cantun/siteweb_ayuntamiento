@@ -17,19 +17,16 @@ const TransparenciaComponent = () => {
 
   return (
     <>
-      <Accordion collapseAll >
-        {data.map((item,index)=>(
-        <Accordion.Panel key={index}>
-          <Accordion.Title className="bg-cherry text-white hover:bg-red-900">{item.name}</Accordion.Title>
-          <Accordion.Content>
-            <DependencesComponent category={item.id} dependences={item.dependences}></DependencesComponent>
-          </Accordion.Content>
-        </Accordion.Panel>
-        ))}
-      </Accordion>
-
-
-
+        <Accordion collapseAll >
+          {data.map((item,index)=>(
+          <Accordion.Panel key={index}>
+            <Accordion.Title className="bg-cherry text-white hover:bg-red-900">{item.name}</Accordion.Title>
+            <Accordion.Content>
+              <DependencesComponent category={item.id} dependences={item.dependences}></DependencesComponent>
+            </Accordion.Content>
+          </Accordion.Panel>
+          ))}
+        </Accordion>
     </>
 
   );

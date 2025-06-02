@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
-
+import { Navbar, NavbarBrand, NavbarCollapse, NavbarLink, NavbarToggle } from "flowbite-react";
 const Register = () => {
   const [formData, setFormData] = useState({
     email: '',
@@ -40,14 +40,32 @@ const Register = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <div className="max-w-md w-full space-y-8">
+  <>
+    <Navbar fluid rounded className='w-full absolute t-0 left-0 right-0'>
+      <NavbarBrand as={Link} href="/">
+        <img src="/logo-2.png" className="mr-3 h-6 sm:h-9" alt="H. Ayuntamiento de Escárcega" />
+      </NavbarBrand>
+      <NavbarToggle />
+      <NavbarCollapse>
+        <NavbarLink href="/" active>
+          Inicio
+        </NavbarLink>
+        <Link to="/login">Iniciar sesión</Link>
+        <Link to="/register">Registrarse</Link>
+      </NavbarCollapse>
+    </Navbar>   
+ 
+    <div className="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
         <div>
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Crear Cuenta
+          <h2 className="mt-4 text-center text-2xl font-bold text-gray-900">
+            Crear cuenta
           </h2>
+          <div className="flex items-center py-3">
+            <h3 className="text-mb font-semibold">Aspirantes a la Policía Municipal de Proximidad</h3>
+          </div>
         </div>
-        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+        <form className="space-y-2" onSubmit={handleSubmit}>
           {error && (
             <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
               {typeof error === 'string' ? error : JSON.stringify(error)}
@@ -147,6 +165,7 @@ const Register = () => {
         </form>
       </div>
     </div>
+  </>
   );
 };
 

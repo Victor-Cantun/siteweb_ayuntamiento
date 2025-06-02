@@ -11,7 +11,7 @@ const AppRoutes = () => {
 
     return (
         <Routes>
-            <Route path="/" element={isAuthenticated ? <Navigate to="/dashboard" /> : <Login />} />
+            <Route path="/login" element={isAuthenticated ? <Navigate to="/dashboard" /> : <Login />} />
             <Route path="/register" element={isAuthenticated ? <Navigate to="/dashboard" /> : <Register />} />
             <Route path="/dashboard" element={
                 <ProtectedRoute>

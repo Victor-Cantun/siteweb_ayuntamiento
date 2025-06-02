@@ -2,19 +2,18 @@
 import '../input.css'
 import '../output.css'
 import '../styles/style.css'
-import Header from './../components/Header.astro'
+import Header_white from './../components/Header_white.astro'
+import Footer from "../components/Footer.astro";
 interface Props {
 	title: string;
 }
-const title = 'H. Ayuntamiento de Escárcega';
-import App from '../components/policia/App';
-import Layout from '../layouts/Layout.astro'
+const { title } = Astro.props;
 ---
 <!doctype html>
 <html lang="es">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content="H. Ayuntamiento de Escárcega" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
@@ -22,14 +21,12 @@ import Layout from '../layouts/Layout.astro'
 	</head>
 	<body>
 		<div id="content">
-            <main>
-                <section class="">
-                    <div class="">
-                        <App client:only="react"></App>
-                    </div>
-                </section>
-            </main>
+			<Header_white/>
+			<slot />
+            <Footer />
 		</div>
 		<script  src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>		
 	</body>
+	<div id="fb-root"></div>
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v21.0"></script>
 </html>
