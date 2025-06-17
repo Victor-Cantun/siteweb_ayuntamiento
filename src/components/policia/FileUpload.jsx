@@ -43,10 +43,8 @@ const FileUpload = ({
         return;
       }
       await uploadFile(file, existingFile?.utility_type || '');
-      setUploading(true);
+/*       setUploading(true);
       setProgress(0);
-
-      // Simular progreso
       const progressInterval = setInterval(() => {
         setProgress(prev => {
           if (prev >= 90) {
@@ -57,7 +55,7 @@ const FileUpload = ({
         });
       }, 100);
 
-      await onUpload(file, type);
+      await onUpload(file, type); */
       
 /*       clearInterval(progressInterval);
       setProgress(100);

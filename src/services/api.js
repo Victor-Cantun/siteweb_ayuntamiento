@@ -72,11 +72,11 @@ export const documentsAPI = {
     }
     
     // Debug - mostrar lo que se está enviando
-    console.log('Enviando archivo:', file);
-    console.log('Tipo:', type);
-    console.log('Sabe manejar:', utilityType);
-    console.log('Tamaño del archivo:', file.size, 'bytes');
-    console.log('Nombre del archivo:', file.name);
+    //console.log('Enviando archivo:', file);
+    //console.log('Tipo:', type);
+    //console.log('Sabe manejar:', utilityType);
+    //console.log('Tamaño del archivo:', file.size, 'bytes');
+    //console.log('Nombre del archivo:', file.name);
     
     return api.post('/documents/', formData, {
       headers: {
