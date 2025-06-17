@@ -37,9 +37,9 @@ const Dashboard = () => {
     }
   };
 
-  const handleFileUpload = async (file, type) => {
+  const handleFileUpload = async (file, type, utilityType = '') => {
     try {
-      const response = await documentsAPI.uploadDocument(file, type);
+      const response = await documentsAPI.uploadDocument(file, type, utilityType);
       
       // Actualizar el estado local
       setDocuments(prev => ({
@@ -52,12 +52,13 @@ const Dashboard = () => {
       throw new Error(
         error.response?.data?.error || 
         error.response?.data?.document?.[0] || 
+        error.response?.data?.utility_type?.[0] ||
         'Error al subir el archivo'
       );
     }
   };
 
-  const handleFileEdit = async (document) => {
+  const handleFileEdit = async (documentData) => {
     const input = document.createElement('input');
     input.type = 'file';
     input.accept = '.pdf';
@@ -74,12 +75,14 @@ const Dashboard = () => {
             throw new Error('El archivo no puede ser mayor a 5MB');
           }
 
-          const response = await documentsAPI.updateDocument(document.id, file);
-          
+          const response = await documentsAPI.updateDocument(documentData.id, file);
+          const updatedDocument = response.data;
+          //console.log('Documento anterior:',documentData.type);
+          //console.log('Documento actualizado:',response.data);
           // Actualizar el estado local
           setDocuments(prev => ({
             ...prev,
-            [document.type]: response.data.document
+            [documentData.type]: updatedDocument
           }));
           
           alert('Documento actualizado exitosamente');
@@ -92,15 +95,15 @@ const Dashboard = () => {
     input.click();
   };
 
-  const handleFileDelete = async (document) => {
+  const handleFileDelete = async (documentData) => {
     if (window.confirm('¿Estás seguro de que quieres eliminar este documento?')) {
       try {
-        await documentsAPI.deleteDocument(document.id);
+        await documentsAPI.deleteDocument(documentData.id);
         
         // Actualizar el estado local
         setDocuments(prev => ({
           ...prev,
-          [document.type]: null
+          [documentData.type]: null
         }));
         
         alert('Documento eliminado exitosamente');
@@ -128,7 +131,7 @@ const Dashboard = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
-              <h1 className="text-xl font-semibold">Aspirantes a la Policía Municipal de Proximidad</h1>
+              <h1 className="text-sm md:text-lg font-semibold">Aspirantes a la Policía Municipal de Proximidad</h1>
             </div>
             <div className="flex items-center space-x-4">
               <span className="text-gray-700">Hola, {user?.first_name || user?.email}</span>
@@ -144,9 +147,9 @@ const Dashboard = () => {
       </nav>
 
       <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-        <div className="px-4 py-6 sm:px-0">
-          <div className="mb-8">
-{/*             <h2 className="text-2xl font-bold text-gray-900 mb-2">
+        <div className="px-4 py-4 sm:px-0">
+          <div className="mb-4">
+            {/*<h2 className="text-2xl font-bold text-gray-900 mb-2">
               Gestión de Documentos
             </h2> */}
             <p className="text-gray-600">
@@ -154,42 +157,47 @@ const Dashboard = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map(type => (
-              <FileUpload
-                key={type}
-                type={type}
-                title={documentTypes[type]}
-                existingFile={documents[type]}
-                onUpload={handleFileUpload}
-                onEdit={handleFileEdit}
-                onDelete={handleFileDelete}
-              />
-            ))}
-          </div>
-
-          <div className="bg-white p-6 rounded-lg shadow">
-            <h3 className="text-lg font-medium text-gray-900 mb-4">
-              Resumen de Documentos
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ].map(type => {
-                const doc = documents[type];
-                return (
-                  <div key={type} className="text-center p-4 border rounded-lg">
-                    <h4 className="font-medium text-gray-900 mb-2">
-                      {documentTypes[type]}
-                    </h4>
-                    <div className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
-                      doc 
-                        ? 'bg-green-100 text-green-800' 
-                        : 'bg-red-100 text-red-800'
-                    }`}>
-                      {doc ? 'Subido' : 'Pendiente'}
-                    </div>
-                  </div>
-                );
-              })}
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 mb-8">
+            {/* cargar de archivos */}
+            <div className="md:col-span-2 lg:col-span-2">
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map(type => (
+                <FileUpload
+                  key={type}
+                  type={type}
+                  title={documentTypes[type]}
+                  existingFile={documents[type]}
+                  onUpload={handleFileUpload}
+                  onEdit={handleFileEdit}
+                  onDelete={handleFileDelete}
+                />
+              ))}
+            </div>
+            {/* archivos cargados */}
+            <div className="">
+              <div className="bg-white p-6 rounded-lg shadow">
+                <h3 className="text-lg font-medium text-gray-900 mb-4">
+                  Resumen de Documentos
+                </h3>
+                <div className="grid grid-cols-1 gap-4">
+                  {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ].map(type => {
+                    const doc = documents[type];
+                    return (
+                      <div key={type} className="flex flex-wrap p-4 border rounded-lg">
+                        <h4 className="w-2/3 font-medium text-sm text-gray-900 mb-2">
+                          {documentTypes[type]}
+                        </h4>
+                        <div className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
+                          doc 
+                            ? 'bg-green-100 text-green-800' 
+                            : 'bg-red-100 text-red-800'
+                        }`}>
+                          {doc ? 'Subido' : 'Pendiente'}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
             </div>
           </div>
         </div>

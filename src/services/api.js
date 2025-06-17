@@ -61,14 +61,20 @@ api.interceptors.response.use(
 );
 
 export const documentsAPI = {
-  uploadDocument: (file, type) => {
+  uploadDocument: (file, type, utilityType = null) => {
     const formData = new FormData();
     formData.append('document', file);
     formData.append('type', type.toString());
+
+        // Solo agregar utility_type si es tipo 3 y se proporciona
+    if (type === 7 && utilityType) {
+      formData.append('utility_type', utilityType);
+    }
     
     // Debug - mostrar lo que se está enviando
     console.log('Enviando archivo:', file);
     console.log('Tipo:', type);
+    console.log('Sabe manejar:', utilityType);
     console.log('Tamaño del archivo:', file.size, 'bytes');
     console.log('Nombre del archivo:', file.name);
     
