@@ -6,8 +6,23 @@ import Layout from '../layouts/Layout_white.astro'
 <Layout title={title}>
     <main class="w-screen content ">
         <section class="w-full h-dvh bg-slate-100 overflow-y-auto">
-            <div class="max-w-sm md:max-w-max m-auto py-10">
+            <div class="mx-auto flex justify-center px-5">
                 <h2 class="mb-4 text-2xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white uppercase">Transparencia</h2>
+            </div>
+
+            <div class="flex justify-center px-5">
+                <div class="max-w-sm md:max-w-md lg:mx-w-lg m-auto w-full ">
+                    <ul class="list-none">
+                        <li class=" bg-cherry w-full hover:bg-red-900 border border-e-white flex">
+                            <a target="_blank" href="/COTAIPEC" class="cursor-pointer p-6 grow">
+                                <span class="text-white">COTAIPEC</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="max-w-sm md:max-w-max m-auto py-10">
                 <TransparenciaComponent client:load></TransparenciaComponent>
             </div>
 
@@ -38,7 +53,8 @@ import Layout from '../layouts/Layout_white.astro'
                         </li>
                     </ul>
                 </div>
-            </div>            
+            </div>
+
         </section>
 
     </main>
