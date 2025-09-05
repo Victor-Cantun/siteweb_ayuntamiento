@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { api } from "../api/api.js";
+import { Accordion, AccordionContent, AccordionPanel, AccordionTitle } from "flowbite-react";
+
 const Menu = () => {
     const [data, setData] = useState([]);
 
@@ -12,47 +14,60 @@ const Menu = () => {
         }
         fetchData();
     }, []);    
-    const renderMenu = (items, nivel = 0) => (
-    <ul className={nivel === 0 ? "space-y-2" : "ml-4 border-l pl-4"}>
+    const renderMenu = (items, nivel = 0) => 
+         
+    (
+    <Accordion collapseAll>
       {items.map((item) => {
         const esPadre = item.hijos.length > 0;
 
         return (
-          <li key={item.id} className="mb-2">
-            {item.archivo ? (
-              <a
-                href={api + item.archivo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`block ${
-                  esPadre
-                    ? "text-lg font-semibold text-red-700 hover:text-blue-900"
-                    : "text-sm text-gray-600 hover:text-gray-800"
-                }`}
-              >
-                {item.nombre}
-              </a>
-            ) : (
-              <span
-                className={`block ${
-                  esPadre
-                    ? "text-lg font-semibold text-red-700"
-                    : "text-sm text-gray-600"
-                }`}
-              >
-                {item.nombre}
-              </span>
-            )}
+          <Accordion.Panel key={item.id}>
+            <Accordion.Title >
+              {item.archivo ? (
+                <a
+                  href={api+item.archivo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${
+                    esPadre
+                      ? "text-lg font-semibold text-red-900 hover:text-gray-800"
+                      : "text-sm text-gray-600 hover:text-blue-700"
+                  }`}
+                >
+                  {item.nombre}
+                </a>
+              ) : (
+                <span
+                  className={`${
+                    esPadre
+                      ? "text-lg font-semibold text-red-900"
+                      : "text-sm text-gray-600"
+                  }`}
+                >
+                  {item.nombre}
+                </span>
+              )}
+            </Accordion.Title>
 
-            {esPadre && renderMenu(item.hijos, nivel + 1)}
-          </li>
+            {esPadre && (
+              <Accordion.Content>
+                {renderMenu(item.hijos, nivel + 1)}
+              </Accordion.Content>
+            )}
+          </Accordion.Panel>
         );
       })}
-    </ul>
+    </Accordion>
     );
 
-    return (    <div className="p-4 bg-gray-50 rounded shadow">
-      {renderMenu(data)}
-    </div>);
+    return (
+      <>
+        <h2 className="text-gray-700 text-center font-bold text-2xl p-5 ">OBLIGACIONES DE TRANSPAREENCIA</h2>  
+        <div className="p-4 bg-gray-50 rounded shadow">
+          {renderMenu(data)}
+        </div>
+      </>
+    );
 }
 export default Menu;
