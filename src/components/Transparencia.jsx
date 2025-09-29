@@ -17,7 +17,7 @@ const TransparenciaComponent = () => {
 
   return (
     <>
-        <Accordion collapseAll >
+        <Accordion collapseAll className="w-full" >
           {data.map((item,index)=>(
           <Accordion.Panel key={index}>
             <Accordion.Title className="bg-cherry text-white hover:bg-red-900">{item.name}</Accordion.Title>

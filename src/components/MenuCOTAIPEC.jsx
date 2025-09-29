@@ -63,7 +63,7 @@ const Menu = () => {
 
     return (
       <>
-        <h2 className="text-gray-700 text-center font-bold text-2xl p-5 ">OBLIGACIONES DE TRANSPAREENCIA</h2>  
+        <h2 className="text-gray-700 text-center font-bold text-2xl p-5 ">OBLIGACIONES DE TRANSPARENCIA</h2>  
         <div className="p-4 bg-gray-50 rounded shadow">
           {renderMenu(data)}
         </div>
