@@ -21,7 +21,7 @@ const TransparenciaComponent = () => {
           {data.map((item,index)=>(
           <Accordion.Panel key={index}>
             <Accordion.Title className="bg-cherry text-white hover:bg-red-900">{item.name}</Accordion.Title>
-            <Accordion.Content>
+            <Accordion.Content className="w-full">
               <DependencesComponent category={item.id} dependences={item.dependences}></DependencesComponent>
             </Accordion.Content>
           </Accordion.Panel>
