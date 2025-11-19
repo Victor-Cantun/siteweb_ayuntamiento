@@ -37,7 +37,22 @@ const title = "H. Ayuntamiento de Escárcega";
                     <a href="https://smdif.escarcega.gob.mx/contabilidad/" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white z-[99]">Contabilidad SMDIF</a>
                   </li>
                   <li class="z-[99]">
-                    <a href="/smapae" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white z-[99]">Contabilidad SMAPAE</a>
+                    <button id="doubleDropdownButton" data-dropdown-toggle="doubleDropdown" data-dropdown-placement="right-start" type="button" class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                      SMAPAE
+                      <svg class="w-2.5 h-2.5 ms-3 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                      </svg>
+                    </button>
+                      <div id="doubleDropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700">
+                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="doubleDropdownButton">
+                          <li>
+                            <a href="/smapae" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Contabilidad</a>
+                          </li>
+                          <li>
+                            <a href="/sevac" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">SEVAC</a>
+                          </li>
+                        </ul>
+                    </div>
                   </li>
                   <li class="z-[99]">
                     <a href="/transparencia" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white z-[99]">Transparencia</a>

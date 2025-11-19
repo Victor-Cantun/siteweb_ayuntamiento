@@ -27,25 +27,56 @@ const TrimestralesSMAPAE = ({subgrupo,year}) => {
   }, [year]);
 
   return (
-    <>      
-      <div >
-        <nav aria-label="Page navigation example">  
-          <ul className="flex items-center -space-x-px h-8 text-sm">
-            {data.map(item => ( 
-              <>
+<>      
+    <div>
+      <nav aria-label="Page navigation example">  
+        <ul className="inline-flex -space-x-px text-sm items-center">
 
-                <li>
-                  <a target="_blank" href={api + item.document} className={`flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border hover:bg-gray-100 hover:text-gray-700  dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white`}>
-                    {item.quarter}
+          {data.length > 0 ? (
+            data.map(doc => (
+              <li key={doc.id}>
+                {/* semestral */}
+                {doc.periodo === "semestral" && (
+                  <a
+                    href={api + doc.document}
+                    target="_blank"
+                    className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                  >
+                    {doc.semestre}
                   </a>
-                </li>
+                )}
 
-              </>
-              ))}       
-          </ul>
-        </nav>
-      </div>
-    </>
+                {/* trimestral o null */}
+                {(doc.periodo === "trimestral" || doc.periodo === null) && (
+                  <a
+                    href={api + doc.document}
+                    target="_blank"
+                    className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                  >
+                    {doc.quarter}
+                  </a>
+                )}
+
+                {/* anual */}
+                {doc.periodo === "anual" && (
+                  <a
+                    href={api + doc.document}
+                    target="_blank"
+                    className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                  >
+                    {doc.year}
+                  </a>
+                )}
+              </li>
+            ))
+          ) : (
+            <li className="text-gray-400 italic">No hay documentos</li>
+          )}
+
+        </ul>
+      </nav>
+    </div>
+  </>
   );
 };
 export default TrimestralesSMAPAE;

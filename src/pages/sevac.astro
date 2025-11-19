@@ -1,0 +1,14 @@
+---
+const title = 'H. Ayuntamiento de Escárcega';
+import SevacSMAPAE from '../components/Sevac';
+import Layout from '../layouts/Layout_white.astro'
+---
+<Layout title={title}>
+    <main >
+        <section class="pt-5 ml-[5%] mr-[5%] flex justify-center bg-slate-100">
+            <div class="my-10 w-full">
+                <SevacSMAPAE client:load></SevacSMAPAE>
+            </div>
+        </section>
+    </main>
+</Layout>
